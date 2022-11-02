@@ -1,0 +1,34 @@
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+.footer__link {
+    padding: 0;
+}
+
+.footer__social_links {
+   gap: 24px;
+}
+
+.footer__social_link {
+    width: 24px;
+    height: 24px;
+}
+
+.footer__social_link-github{
+    background: url('../../images/icons/github-icon.svg') center no-repeat;
+}
+
+.footer__social_link-facebook{
+    background: url('../../images/icons/fb-icon.svg') center no-repeat;
+}

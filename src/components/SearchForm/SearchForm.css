@@ -1,0 +1,22 @@
+.searchForm {
+    color: #FFF;
+    max-width: 608px;
+    margin: 80px auto;
+}
+
+.searchForm__title{
+    margin: 0;
+    font-size: 60px;
+}
+
+.searchForm__subtitle{
+    margin: 32px auto 88px;
+}
+
+.searchForm__input_container {
+    display: flex;
+}
+
+.searchForm__input {
+    width: 100%;
+}

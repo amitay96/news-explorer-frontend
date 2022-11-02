@@ -1,0 +1,10 @@
+html{
+  background: url('../../images/search_background.png') top no-repeat;
+  background-size: contain;
+}
+
+.App {
+  margin: 0 auto;
+  max-width: calc(100vw - (104 / 1280 * 100%));
+  color: #1A1B22;
+}
