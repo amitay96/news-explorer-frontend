@@ -6,12 +6,18 @@
     padding: 80px 0;
 }
 
-/* .about__pic {
-    background: url('../../images/author-image.png') center no-repeat;
-    background-size: cover;
-    height: ;
-} */
-
 .about__container {
     max-width: 600px;
+}
+
+.about__title {
+    font-family: 'Roboto Slab';
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+.about__text {
+    font-family: 'Roboto';
+    font-size: 40px;
+    line-height: 1.33;
 }

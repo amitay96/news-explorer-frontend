@@ -1,11 +1,12 @@
 import React from "react";
+import authorPic from '../../images/author-image.png';
 import "./About.css";
 
 function About() {
   return (
     <div className="About">
       <img
-        src="../../images/author-image.png"
+        src={authorPic}
         className="about__pic"
         alt="Authors profile"
       />
