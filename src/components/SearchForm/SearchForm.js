@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchForm.css";
 
-function SearchForm() {
+const SearchForm = () => {
   return (
     <form className="searchForm">
       <h1 className="searchForm__title">What's going on in the world?</h1>
@@ -15,6 +15,6 @@ function SearchForm() {
       </div>
     </form>
   );
-}
+};
 
 export default SearchForm;

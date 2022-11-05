@@ -3,7 +3,7 @@ import React from "react";
 // import Menu from "./Menu";
 import "./Navigation.css";
 
-function Navigation() {
+const Navigation = () => {
   return (
     <nav className="Navigation">
       <ul className={"navigation__links"}>
@@ -17,7 +17,7 @@ function Navigation() {
           Saved Articles
           {/* </Link> */}
         </li>
-        <li className="navigation__link-item">
+        <li className="navigation__link-item navigation__user_login">
           {/* <Link to="/signin" className="navigation__link"> */}
           Sign in
           {/* </Link> */}
@@ -26,6 +26,6 @@ function Navigation() {
       {/* <Menu></Menu> */}
     </nav>
   );
-}
+};
 
 export default Navigation;

@@ -1,8 +1,8 @@
 import React from "react";
 import "./SavedNews.css";
 
-function SavedNews() {
+const SavedNews = () => {
   return <div className="savedNews"></div>;
-}
+};
 
 export default SavedNews;

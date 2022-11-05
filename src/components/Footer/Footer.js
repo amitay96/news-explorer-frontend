@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-function Footer() {
+const Footer = () => {
   return (
     <div className="Footer">
       <p className="footer__copyright">© 2022 Supersite, Powered by News API</p>
@@ -15,6 +15,6 @@ function Footer() {
       </ul>
     </div>
   );
-}
+};
 
 export default Footer;

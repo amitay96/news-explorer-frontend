@@ -1,0 +1,4 @@
+.newsCard__save_button {
+    background: url("../../images/icons/save_icon.svg") center no-repeat;
+    background-size: cover;
+}

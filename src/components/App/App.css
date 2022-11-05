@@ -1,5 +1,5 @@
 .App {
   margin: 0 auto;
-  max-width: calc(100vw - (104 / 1280 * 100%));
+  /* max-width: calc(100vw - (104 / 1280 * 100%)); */
   color: #1A1B22;
 }

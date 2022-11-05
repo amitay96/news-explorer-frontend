@@ -4,7 +4,7 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import About from "../About/About";
 import "./Main.css";
 
-function Main() {
+const Main = () => {
   return (
     <div className="Main">
       <SearchForm />
@@ -12,6 +12,6 @@ function Main() {
       <About />
     </div>
   );
-}
+};
 
 export default Main;
