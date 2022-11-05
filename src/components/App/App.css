@@ -1,5 +1,7 @@
 .App {
   margin: 0 auto;
-  /* max-width: calc(100vw - (104 / 1280 * 100%)); */
+  background: url('../../images/search_background.png') top no-repeat;
+  background-size: contain;
+  max-width: 1440px;
   color: #1A1B22;
 }

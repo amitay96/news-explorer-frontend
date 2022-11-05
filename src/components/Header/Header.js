@@ -9,7 +9,6 @@ const Header = () => {
         <p className="header__logo">NewsExplorer</p>
         <Navigation></Navigation>
       </div>
-      <div className="header__seperator"/>
     </header>
   );
 };

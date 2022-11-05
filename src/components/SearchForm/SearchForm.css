@@ -6,12 +6,15 @@
 }
 
 .searchForm__title{
-    margin: 0;
+    font-family: "Roboto Slab";
+    font-weight: normal;
     font-size: 60px;
+    line-height: 1.07;
+    margin: 0;
 }
 
 .searchForm__subtitle{
-    margin: 32px auto 88px;
+    margin: 32px 0 88px;
 }
 
 .searchForm__input_container {
@@ -36,5 +39,6 @@
     border-radius: 40px;
     background-color: #2F71E5;
     color: #FFF;
+    font-weight: 500;
     cursor: pointer;
 }

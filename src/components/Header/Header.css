@@ -1,8 +1,9 @@
-/* .header {
-} */
+.header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 calc(104 / 1440 * 100%);
+}
 
 .header__container {
-    /* max-width: calc(100vw - (104 / 1280 * 100%)); */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,10 +15,5 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 1.2;
-    margin: 0;
-    padding: 30px 0;
-}
-
-.header__seperator {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 30px 0 26px;
 }
