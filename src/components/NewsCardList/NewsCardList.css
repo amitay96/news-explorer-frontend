@@ -1,4 +1,4 @@
 .NewsCardList {
-    padding: 0px calc(104 / 1440 * 100%);
-    background: #F5F6F7;
+    display: flex;
+    margin: 63px auto;
 }

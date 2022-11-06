@@ -1,7 +1,7 @@
 .App {
   margin: 0 auto;
   background: url('../../images/search_background.png') top no-repeat;
-  background-size: contain;
+  background-size: auto;
   max-width: 1440px;
   color: #1A1B22;
 }

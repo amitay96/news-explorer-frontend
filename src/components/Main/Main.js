@@ -1,6 +1,6 @@
 import React from "react";
 import SearchForm from "../SearchForm/SearchForm";
-import NewsCardList from "../NewsCardList/NewsCardList";
+import SearchResults from "../SearchResults/SearchResults";
 import About from "../About/About";
 import "./Main.css";
 
@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <div className="Main">
       <SearchForm />
-      <NewsCardList />
+      <SearchResults />
       <About />
     </div>
   );

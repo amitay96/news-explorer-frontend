@@ -19,3 +19,7 @@
     border: none;
     border-radius: 50px;
 }
+
+.searchResults__button:hover {
+    background: #FFF;
+}
