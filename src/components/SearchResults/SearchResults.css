@@ -1,0 +1,21 @@
+.searchResults {
+    padding: 80px calc(104 / 1440 * 100%);
+    background-color: #F5F6F7;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchResults__title {
+    font-size: 40px;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.searchResults__button {
+    font-weight: 500;
+    align-self: center;
+    background: #FFF;
+    padding: 20px 99px;
+    border: none;
+    border-radius: 50px;
+}
