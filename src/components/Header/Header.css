@@ -1,6 +1,7 @@
 .header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0 calc(104 / 1440 * 100%);
+    height: 80px;
 }
 
 .header__container {
@@ -8,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     color: #FFF;
+    height: 100%;
 }
 
 .header__logo {

@@ -1,4 +1,28 @@
-.NewsCardList {
+.newsCardList {
     display: flex;
-    margin: 63px auto;
+    padding: 80px calc(104 / 1440 * 100%);
+    background-color: #F5F6F7;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.newsCardList__title {
+    font-size: 40px;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.newsCardList__button {
+    font-weight: 500;
+    align-self: center;
+    background: #FFF;
+    padding: 20px 99px;
+    border: none;
+    border-radius: 80px;
+    transition: all 0.5s;
+}
+
+.newsCardList__button:hover {
+    background: #E8E8E8;
+    opacity: 0.9;
 }

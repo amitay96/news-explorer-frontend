@@ -1,3 +1,7 @@
+.navigation {
+    height: 100%;
+}
+
 .navigation__links {
     display: flex;
     flex-direction: row;
@@ -7,6 +11,7 @@
     padding: 0;
     align-items: center;
     font-weight: 500;
+    height: 100%;
 }
 
 .navigation__link-item {
@@ -14,13 +19,26 @@
 }
 
 .navigation__link-item_active {
+    height: 100%;
+    /* padding-bottom: 23px; */
+    display: flex;
+    flex-direction: row-reverse,l,l;
+    justify-content: end;
     border-bottom: 3px solid #FFFFFF;
-    border-collapse: separate;
-    border-spacing: 23px;
 }
 
 .navigation__user_login {
     padding: 12px;
-    border: 1px solid white;
-    border-radius: 40px;
+    border: 1px solid #FFF;
+    border-radius: 100px;
+    display: flex;
+    gap: 22px;
+}
+
+.navigation__user_logout-icon {
+    display: none;
+}
+
+.navigation__user_logout-icon_active {
+    display: block;
 }
