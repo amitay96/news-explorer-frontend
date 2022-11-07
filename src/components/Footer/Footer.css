@@ -33,9 +33,9 @@
 }
 
 .footer__social_link-github{
-    background: url('../../images/icons/github-icon.svg') center no-repeat;
+    background: url('../../images/icons/github_icon.svg') center no-repeat;
 }
 
 .footer__social_link-facebook{
-    background: url('../../images/icons/fb-icon.svg') center no-repeat;
+    background: url('../../images/icons/fb_icon.svg') center no-repeat;
 }

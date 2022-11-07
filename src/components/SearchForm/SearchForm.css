@@ -2,7 +2,7 @@
     color: #FFF;
     max-width: 608px;
     margin: 0 auto;
-    padding: 80px 0;
+    padding: 80px calc(104 / 1440 * 100%);
 }
 
 .searchForm__title{
@@ -36,9 +36,18 @@
     padding: 0 55px;
     height: 100%;
     border: none;
-    border-radius: 40px;
+    border-radius: 100px;
     background-color: #2F71E5;
     color: #FFF;
     font-weight: 500;
     cursor: pointer;
+    transition: all 0.5s;
+}
+
+.searchForm__input_button:hover {
+    background-color: #347EFF;
+}
+
+.searchForm__input_button:focus {
+    background-color: #2A65CC;
 }
