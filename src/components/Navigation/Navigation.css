@@ -16,14 +16,18 @@
 
 .navigation__link-item {
     cursor: pointer;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
 }
 
-.navigation__link-item_active {
+.navigation__link-home_active {
     height: 100%;
-    /* padding-bottom: 23px; */
-    display: flex;
-    flex-direction: row-reverse,l,l;
-    justify-content: end;
+    border-bottom: 3px solid #FFFFFF;
+}
+
+.navigation__link-saved_active {
+    height: 100%;
     border-bottom: 3px solid #FFFFFF;
 }
 
