@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./Popup.css";
 
 const Popup = ({ isOpen, name, onClose, children }) => {
   useEffect(() => {

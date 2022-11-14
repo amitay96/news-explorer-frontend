@@ -13,7 +13,7 @@ const Header = () => {
         <nav className="header__navigation">
           <ul className={"header__links"}>
             <li className="header__link-item header__link-home_active">
-              <Link to="/home" className="header__link">
+              <Link to="/" className="header__link">
                 Home
               </Link>
             </li>
