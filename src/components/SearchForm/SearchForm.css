@@ -1,8 +1,9 @@
 .searchForm {
+    padding: 0 calc(104 / 1440 * 100%);
     color: #FFF;
     max-width: 608px;
     margin: 0 auto;
-    padding: 80px calc(104 / 1440 * 100%);
+    padding: 80px 0;
 }
 
 .searchForm__title{
@@ -50,4 +51,30 @@
 
 .searchForm__input_button:focus {
     background-color: #2A65CC;
+}
+
+.searchForm__results {
+    background-color: #F5F6F7;
+    padding: 80px calc(104 / 1440 * 100%);
+}
+
+.searchForm__results_title {
+    font-size: 40px;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.searchForm__results_button {
+    font-weight: 500;
+    align-self: center;
+    background: #FFF;
+    padding: 20px 99px;
+    border: none;
+    border-radius: 80px;
+    transition: all 0.5s;
+}
+
+.searchForm__results_button:hover {
+    background: #E8E8E8;
+    opacity: 0.9;
 }
