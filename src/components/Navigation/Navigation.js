@@ -3,26 +3,19 @@ import { Link } from "react-router-dom";
 import "./Navigation.css";
 
 const Navigation = (props) => {
-  const signoutClick = () => {
-    props.toggleMenu();
-    props.handleSignout();
-  };
-
   return (
-    <div
-      className={`header__menu ${
-        props.isMenuOpen ? "header__menu_active" : ""
-      }`}
+    <Popup
+      className={`navigation ${props.isOpen ? "header__menu_active" : ""}`}
     >
-      <ul className="header__links header__links_menu">
-        <li className="header__link-item">{props.name}</li>
+      <ul className="header__links navigation__links">
+        <li className="header__link-item">Elise</li>
         <li className="header__link-item">
-          <Link to="/signin" className="header__link" onClick={signoutClick}>
+          <Link to="/signin" className="header__link">
             Log out
           </Link>
         </li>
       </ul>
-    </div>
+    </Popup>
   );
 };
 
