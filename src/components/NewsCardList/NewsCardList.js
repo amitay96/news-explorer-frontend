@@ -2,14 +2,14 @@ import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 
-function NewsCardList() {
+const NewsCardList = (news) => {
   return (
-    <section className="newsCardList">
-      <h3 className="newsCardList__title">Search results</h3>
-      <NewsCard />
-      <button className="newsCardList__button">Show more</button>
-    </section>
+    <ul className="newsCardList">
+      {news.map((card) => {
+        return <NewsCard newsCard={card} key={card._id} />;
+      })}
+    </ul>
   );
-}
+};
 
 export default NewsCardList;

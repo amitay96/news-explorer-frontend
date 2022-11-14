@@ -1,16 +1,14 @@
 import React from "react";
 import SearchForm from "../SearchForm/SearchForm";
-import NewsCardList from "../NewsCardList/NewsCardList";
 import About from "../About/About";
 import "./Main.css";
 
 const Main = () => {
   return (
-    <div className="Main">
+    <section className="Main">
       <SearchForm />
-      <NewsCardList />
       <About />
-    </div>
+    </section>
   );
 };
 
