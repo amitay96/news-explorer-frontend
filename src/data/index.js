@@ -43,3 +43,5 @@ const savedArticles = [
     image: "",
   },
 ];
+
+module.exports = savedArticles;
