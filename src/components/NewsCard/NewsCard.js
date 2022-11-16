@@ -1,20 +1,20 @@
 import React from "react";
 import "./NewsCard.css";
 
-const NewsCard = (newsCard) => {
+const NewsCard = (props) => {
   return (
     <li className="newsCard">
       <button className="newsCard__save_button" type="button" />
       <img
         className="newsCard__image"
-        src={newsCard.image}
-        alt={newsCard.title}
+        src={props.newsCard.image}
+        alt={props.newsCard.title}
       />
       <div className="newsCard__text-area">
-        <p className="newsCard__date">{newsCard.date}</p>
-        <p className="newsCard__title">{newsCard.title}</p>
-        <p className="newsCard__text">{newsCard.text}</p>
-        <p className="newsCard__source">{newsCard.source}</p>
+        <p className="newsCard__date">{props.newsCard.date}</p>
+        <p className="newsCard__title">{props.newsCard.title}</p>
+        <p className="newsCard__text">{props.newsCard.text}</p>
+        <p className="newsCard__source">{props.newsCard.source}</p>
       </div>
     </li>
   );

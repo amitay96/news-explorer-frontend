@@ -1,6 +1,9 @@
 .newsCardList {
-    display: flex;
-    padding: 80px calc(104 / 1440 * 100%);
+    padding: 64px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    justify-content: center;
+    gap: 16px;
+    margin: 0;
     flex-direction: column;
-    gap: 64px;
 }

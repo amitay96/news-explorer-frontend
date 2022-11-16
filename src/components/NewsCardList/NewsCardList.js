@@ -2,11 +2,11 @@ import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 
-const NewsCardList = (news) => {
+const NewsCardList = (props) => {
   return (
     <ul className="newsCardList">
-      {news.map((card) => {
-        return <NewsCard newsCard={card} key={card._id} />;
+      {props.news.map((card) => {
+        return <NewsCard newsCard={card} key={card.id} />;
       })}
     </ul>
   );
