@@ -1,5 +1,5 @@
 import React from "react";
-import savedArticles from "../../data";
+import { savedArticles } from "../../data/index";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import "./SearchForm.css";
 
@@ -20,7 +20,7 @@ const SearchForm = () => {
       <div className="searchForm__results">
         <h3 className="searchForm__results_title">Search results</h3>
         <NewsCardList news={savedArticles} />
-        <button className="newsCardList__button">Show more</button>
+        <button className="searchForm__results_button">Show more</button>
       </div>
     </>
   );
