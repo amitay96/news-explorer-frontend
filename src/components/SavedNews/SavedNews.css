@@ -1,0 +1,15 @@
+.savedNews {
+    padding: 80px calc(104 / 1440 * 100%);
+}
+
+.savedNews__route {
+    color: #1A1B2280;
+}
+
+.savedNews__title {
+
+}
+
+.savedNews__keywords {
+
+}

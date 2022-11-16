@@ -1,14 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logout_icon from "../../images/icons/logout.svg";
-import Navigation from "../Navigation/Navigation";
-import "./Header.css";
+import "./SavedNewsHeader.css";
 
-const Header = () => {
+const SavedNewsHeader = (props) => {
   return (
     <header className="header">
       <Navigation />
-      <div className="header__container">
+      <div className="savedHeader__container">
         <p className="header__logo">NewsExplorer</p>
         <nav className="header__navigation">
           <ul className="header__links">
@@ -37,4 +34,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default SavedNewsHeader;
