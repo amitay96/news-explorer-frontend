@@ -1,25 +1,29 @@
 import React from "react";
+import Navigation from "../Navigation/Navigation";
+import { Link } from "react-router-dom";
+import logout_icon from "../../images/icons/logout.svg";
+
 import "./SavedNewsHeader.css";
 
 const SavedNewsHeader = (props) => {
   return (
     <header className="header">
       <Navigation />
-      <div className="savedHeader__container">
+      <div className="header__container savedHeader__container">
         <p className="header__logo">NewsExplorer</p>
         <nav className="header__navigation">
-          <ul className="header__links">
-            <li className="header__link-item header__link-home_active">
-              <Link to="/" className="header__link">
+          <ul className="header__links SavedHeader__link">
+            <li className="header__link-item">
+              <Link to="/" className="savedHeader__link">
                 Home
               </Link>
             </li>
             <li className="header__link-item header__link-saved_active">
-              <Link to="/saved" className="header__link">
+              <Link to="/saved" className="savedHeader__link">
                 Saved Articles
               </Link>
             </li>
-            <li className="header__link-item header__user_login">
+            <li className="header__link-item header__user_login savedHeader__user_login">
               Sign in
               <img
                 src={logout_icon}

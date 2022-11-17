@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import Header from "../Header/Header";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
@@ -37,9 +36,8 @@ function App() {
   return (
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
-        <Header loggedIn={loggedIn} name={userData.name} />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main  loggedIn={loggedIn} userData={userData}/>} />
           <Route path="/saved" element={<SavedNews news={savedArticles} />} />
         </Routes>
         <Footer />

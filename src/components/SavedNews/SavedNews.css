@@ -1,5 +1,5 @@
 .savedNews {
-    padding: 80px calc(104 / 1440 * 100%);
+    padding: 0 calc(104 / 1440 * 100%);
 }
 
 .savedNews__route {

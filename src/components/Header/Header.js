@@ -17,7 +17,7 @@ const Header = () => {
                 Home
               </Link>
             </li>
-            <li className="header__link-item header__link-saved_active">
+            <li className="header__link-item">
               <Link to="/saved" className="header__link">
                 Saved Articles
               </Link>
