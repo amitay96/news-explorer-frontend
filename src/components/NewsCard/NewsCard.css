@@ -30,6 +30,20 @@
     background: url("../../images/icons/save_icon_hover.svg") center no-repeat;
 }
 
+.newsCard__keyword {
+    background-color: white;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    padding: 8px 22px;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.77;
+}
+
 .newsCard__text-area {
     padding: 20px 24px;
     margin: 0;

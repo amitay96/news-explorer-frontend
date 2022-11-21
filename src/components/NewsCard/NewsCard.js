@@ -5,6 +5,7 @@ const NewsCard = (props) => {
   return (
     <li className="newsCard">
       <button className="newsCard__save_button" type="button" />
+      <p className="newsCard__keyword">{props.newsCard.keyword}</p>
       <img
         className="newsCard__image"
         src={props.newsCard.image}
