@@ -6,6 +6,7 @@ import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 import { savedArticles } from "../../data";
 import "./App.css";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function App() {
   const [isSigninPopupOpen, setIsSigninPopupOpen] = useState(false);
@@ -37,7 +38,7 @@ function App() {
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
-          <Route path="/" element={<Main  loggedIn={loggedIn} userData={userData}/>} />
+          <Route path="/" element={<Main  loggedIn={loggedIn} userData={userData} handleLoginClick={handleSigninClick} />}/>
           <Route path="/saved" element={<SavedNews news={savedArticles} />} />
         </Routes>
         <Footer />

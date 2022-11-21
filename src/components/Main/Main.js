@@ -5,9 +5,10 @@ import About from "../About/About";
 import "./Main.css";
 
 const Main = (props) => {
+  console.log(props);
   return (
     <section className="Main">
-      <Header loggedIn={props.loggedIn} name={props.userData.name} />
+      <Header loggedIn={props.loggedIn} name={props.userData.name} handleLoginClick={props.handleLoginClick()}/>
       <SearchForm />
       <About />
     </section>

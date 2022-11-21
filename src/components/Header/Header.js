@@ -4,7 +4,7 @@ import logout_icon from "../../images/icons/logout.svg";
 import Navigation from "../Navigation/Navigation";
 import "./Header.css";
 
-const Header = () => {
+const Header = ( isLoginPopupOpen, handleLoginClick ) => {
   return (
     <header className="header">
       <Navigation />
@@ -22,7 +22,7 @@ const Header = () => {
                 Saved Articles
               </Link>
             </li>
-            <li className="header__link-item header__user_login">
+            <li className="header__link-item header__user_login" onClick={handleLoginClick}>
               Sign in
               <img
                 src={logout_icon}

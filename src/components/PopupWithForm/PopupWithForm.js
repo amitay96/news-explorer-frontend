@@ -2,12 +2,12 @@ import React from "react";
 import Popup from "../Popup/Popup";
 
 function PopupWithForm({
-  isOpen,
-  onClose,
-  onSubmit,
   name,
   title,
   buttonText,
+  isOpen,
+  onClose,
+  onSubmit,
   children,
 }) {
   return (
