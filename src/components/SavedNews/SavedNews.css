@@ -3,13 +3,19 @@
 }
 
 .savedNews__route {
+    margin: 40px 0 28px;
     color: #1A1B2280;
 }
 
 .savedNews__title {
-
+    margin: 0 0 30px;
 }
 
 .savedNews__keywords {
+    margin: 0 0 56px;
+}
 
+.savedNews__keywords_bold {
+    display: inline-block;
+    font-weight: 700;
 }

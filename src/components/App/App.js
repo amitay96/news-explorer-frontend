@@ -5,8 +5,8 @@ import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 import { savedArticles } from "../../data";
+import Login from "../Login/Login";
 import "./App.css";
-import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function App() {
   const [isSigninPopupOpen, setIsSigninPopupOpen] = useState(false);
@@ -24,6 +24,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
+
   //----------------Event Handlers----------------
 
   const handleSigninClick = () => {
@@ -33,15 +34,30 @@ function App() {
   const closeAllPopups = () => {
     setIsSigninPopupOpen(false);
   };
-
+  console.log(isSigninPopupOpen);
   return (
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
         <Routes>
-          <Route path="/" element={<Main  loggedIn={loggedIn} userData={userData} handleLoginClick={handleSigninClick} />}/>
+          <Route
+            path="/"
+            element={
+              <Main
+                loggedIn={loggedIn}
+                userData={userData}
+                handleLoginClick={handleSigninClick}
+              />
+            }
+          />
           <Route path="/saved" element={<SavedNews news={savedArticles} />} />
         </Routes>
         <Footer />
+        <Login
+          isOpen={isSigninPopupOpen}
+          onClose={closeAllPopups}
+          onSubmit=""
+          isLoading={isLoading}
+        />
       </CurrentUserContext.Provider>
     </div>
   );
