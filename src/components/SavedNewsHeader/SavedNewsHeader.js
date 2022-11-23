@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from "../Navigation/Navigation";
 import { Link } from "react-router-dom";
 import logout_icon from "../../images/icons/logout.svg";
 
@@ -8,7 +7,6 @@ import "./SavedNewsHeader.css";
 const SavedNewsHeader = (props) => {
   return (
     <header className="header">
-      <Navigation />
       <div className="header__container savedHeader__container">
         <p className="header__logo">NewsExplorer</p>
         <nav className="header__navigation">

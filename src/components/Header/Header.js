@@ -7,7 +7,6 @@ import "./Header.css";
 const Header = ({ handleLoginClick }) => {
   return (
     <header className="header">
-      <Navigation />
       <div className="header__container">
         <p className="header__logo">NewsExplorer</p>
         <nav className="header__navigation">
@@ -18,7 +17,7 @@ const Header = ({ handleLoginClick }) => {
               </Link>
             </li>
             <li className="header__link-item">
-              <Link to="/saved" className="header__link">
+              <Link to="/saved-news" className="header__link">
                 Saved Articles
               </Link>
             </li>
