@@ -7,11 +7,7 @@ import "./Main.css";
 const Main = (props) => {
   return (
     <section className="Main">
-      <Header
-        loggedIn={props.loggedIn}
-        name={props.userData.name}
-        handleLoginClick={props.handleLoginClick}
-      />
+      <Header handleLoginClick={props.handleLoginClick} />
       <SearchForm />
       <About />
     </section>

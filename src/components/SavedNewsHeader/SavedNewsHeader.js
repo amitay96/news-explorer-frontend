@@ -6,7 +6,7 @@ import "./SavedNewsHeader.css";
 
 const SavedNewsHeader = (props) => {
   return (
-    <header className="header">
+    <header className="header sheader">
       <div className="header__container savedHeader__container">
         <p className="header__logo">NewsExplorer</p>
         <nav className="header__navigation">

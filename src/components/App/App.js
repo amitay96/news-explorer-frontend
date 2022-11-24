@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import Navigation from "../Navigation/Navigation";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
@@ -11,20 +11,6 @@ import "./App.css";
 function App() {
   const [isSigninPopupOpen, setIsSigninPopupOpen] = useState(false);
 
-  const [currentUser, setCurrentUser] = useState({
-    name: "Loading...",
-  });
-
-  const [userData, setUserData] = useState({
-    name: "",
-  });
-
-  const [token, setToken] = useState(localStorage.getItem("jwt"));
-
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(false);
-
   //----------------Event Handlers----------------
 
   const handleSigninClick = () => {
@@ -34,31 +20,22 @@ function App() {
   const closeAllPopups = () => {
     setIsSigninPopupOpen(false);
   };
-  console.log(isSigninPopupOpen);
+
   return (
     <div className="App">
-      <CurrentUserContext.Provider value={currentUser}>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Main
-                loggedIn={loggedIn}
-                userData={userData}
-                handleLoginClick={handleSigninClick}
-              />
-            }
-          />
-          <Route path="/saved" element={<SavedNews news={savedArticles} />} />
-        </Routes>
-        <Footer />
-        <Login
-          isOpen={isSigninPopupOpen}
-          onClose={closeAllPopups}
-          onSubmit=""
-          isLoading={isLoading}
+      <Navigation />
+      <Routes>
+        <Route
+          path="/"
+          element={<Main handleLoginClick={handleSigninClick} />}
         />
-      </CurrentUserContext.Provider>
+        <Route
+          path="/saved-news"
+          element={<SavedNews news={savedArticles} />}
+        />
+      </Routes>
+      <Footer />
+      <Login isOpen={isSigninPopupOpen} onClose={closeAllPopups} onSubmit="" />
     </div>
   );
 }
