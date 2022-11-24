@@ -1,11 +1,12 @@
 import React from "react";
+import { savedArticles } from "../../data";
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 
 const NewsCardList = (props) => {
   return (
     <ul className="newsCardList">
-      {props.news.map((card) => {
+      {savedArticles.map((card) => {
         return <NewsCard newsCard={card} key={card.id} />;
       })}
     </ul>
