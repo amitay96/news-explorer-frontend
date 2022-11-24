@@ -1,5 +1,4 @@
 import React from "react";
-import { savedArticles } from "../../data";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import "./SavedNews.css";
@@ -18,7 +17,7 @@ const SavedNews = (news) => {
           </span>
         </p>
       </section>
-      <NewsCardList news={savedArticles} />
+      <NewsCardList />
     </>
   );
 };

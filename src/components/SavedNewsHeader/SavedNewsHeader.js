@@ -6,23 +6,23 @@ import "./SavedNewsHeader.css";
 
 const SavedNewsHeader = (props) => {
   return (
-    <header className="header sheader">
-      <div className="header__container savedHeader__container">
+    <header className="header saved-header">
+      <div className="header__container saved-header__container">
         <p className="header__logo">NewsExplorer</p>
         <nav className="header__navigation">
-          <ul className="header__links SavedHeader__link">
+          <ul className="header__links saved-header__link">
             <li className="header__link-item">
-              <Link to="/" className="savedHeader__link">
+              <Link to="/" className="saved-header__link">
                 Home
               </Link>
             </li>
-            <li className="header__link-item header__link-saved_active">
-              <Link to="/saved" className="savedHeader__link">
+            <li className="header__link-item saved-header__link_active">
+              <Link to="/saved-news" className="saved-header__link">
                 Saved Articles
               </Link>
             </li>
-            <li className="header__link-item header__user_login savedHeader__user_login">
-              Sign in
+            <li className="header__link-item header__user_login saved-header__user_login">
+              Elise
               <img
                 src={logout_icon}
                 className="header__user_logout-icon"
