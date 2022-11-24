@@ -17,10 +17,11 @@
 }
 
 .saved-header__user_login {
+    width: unset;
     border-color: #000;
+    padding: 11px 15px 11px 19px;
 }
 
-.header__user_logout-icon {
-    width: 24px;
-    height: 24px;
+.saved-header__user_logout-icon {
+    display: block;
 }

@@ -25,7 +25,7 @@ const SavedNewsHeader = (props) => {
               Elise
               <img
                 src={logout_icon}
-                className="header__user_logout-icon"
+                className="header__user_logout-icon saved-header__user_logout-icon"
                 alt="logout icon"
               />
             </li>
