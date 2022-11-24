@@ -1,11 +1,12 @@
 import React from "react";
 import Popup from "../Popup/Popup";
-import "./Login.css";
+import { Link } from "react-router-dom";
+import "./Signup.css";
 
-function Login({ isOpen, onClose, onSubmit }) {
+function Signup({ isOpen, onClose, onSubmit }) {
   return (
-    <Popup name="login" isOpen={isOpen} onClose={onClose}>
-      <h2 className="form__title">Sign in</h2>
+    <Popup name="signup" isOpen={isOpen} onClose={onClose}>
+      <h2 className="popup__title">Sign up</h2>
       <form
         className="form"
         name="login-form"
@@ -35,10 +36,10 @@ function Login({ isOpen, onClose, onSubmit }) {
             />
             <span id="name-input-error"></span>
           </label>
+          <button className="form__button" type="submit">
+            Sign in
+          </button>
         </fieldset>
-        <button className="form__button" type="submit">
-          Sign in
-        </button>
       </form>
 
       <p className="form__footer-text">
@@ -46,13 +47,13 @@ function Login({ isOpen, onClose, onSubmit }) {
         <span
           to="/signup"
           className="form__footer-link"
-          // onClick={openSignup}
+          // onClick={toggle}
         >
-          Sign up
+          Sign in
         </span>
       </p>
     </Popup>
   );
 }
 
-export default Login;
+export default Signup;
