@@ -9,11 +9,9 @@ import { CurrentUserContext } from "./contexts/CurrentUserContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CurrentUserContext.Provider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </CurrentUserContext.Provider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
