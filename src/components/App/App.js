@@ -6,10 +6,12 @@ import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 import { savedArticles } from "../../data";
 import Login from "../Login/Login";
+import Signup from "../Signup/Signup";
 import "./App.css";
 
 function App() {
   const [isSigninPopupOpen, setIsSigninPopupOpen] = useState(false);
+  const [isSignupPopupOpen, setIsSignupPopupOpen] = useState(false);
 
   //----------------Event Handlers----------------
 
@@ -36,6 +38,7 @@ function App() {
       </Routes>
       <Footer />
       <Login isOpen={isSigninPopupOpen} onClose={closeAllPopups} onSubmit="" />
+      <Signup isOpen={isSignupPopupOpen} onClose={closeAllPopups} onSubmit="" />
     </div>
   );
 }

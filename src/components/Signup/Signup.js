@@ -36,7 +36,11 @@ function Signup({ isOpen, onClose, onSubmit }) {
             />
             <span id="name-input-error"></span>
           </label>
-          <button className="form__button" type="submit">
+          <button
+            className="form__button"
+            type="submit"
+            // onClick={}
+          >
             Sign in
           </button>
         </fieldset>
