@@ -1,7 +1,7 @@
 .nav {
-    display: none;
+    /* display: none; */
 }
 
 .navigation__links {
-    flex-direction: column;
+    /* flex-direction: column; */
 }

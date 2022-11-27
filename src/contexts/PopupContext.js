@@ -14,8 +14,8 @@ const PopupProvider = ({ children }) => {
     setPopupStates({ [popupType]: true });
   };
 
-  const closeAllPopups = (popupType) => {
-    setPopupStates({ [popupType]: true });
+  const closeAllPopups = () => {
+    setPopupStates(popupStates.map((popup) => (popupStates[popup] = false)));
   };
 
   const popups = { popupStates, setPopupStates, openPopup, closeAllPopups };
