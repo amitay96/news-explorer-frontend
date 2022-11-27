@@ -7,7 +7,7 @@ import "./Main.css";
 const Main = (props) => {
   return (
     <section className="Main">
-      <Header handleLoginClick={props.handleLoginClick} />
+      <Header />
       <SearchForm />
       <About />
     </section>

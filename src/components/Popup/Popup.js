@@ -1,17 +1,20 @@
 import React, { useEffect } from "react";
+import { usePopup } from "../../contexts/PopupContext";
 import "./Popup.css";
 
 const Popup = ({ isOpen, name, onClose, children }) => {
+  const popupsContext = usePopup();
+
   useEffect(() => {
     if (!isOpen) return;
     const closeByEscape = (e) => {
       if (e.key === "Escape") {
-        onClose();
+        popupsContext.closeAllPopups();
       }
     };
     const closeByOverlay = (e) => {
       if (e.target.classList.contains("popup__active")) {
-        onClose();
+        popupsContext.closeAllPopups();
       }
     };
     document.addEventListener("keydown", closeByEscape);

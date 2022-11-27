@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Navigation from "../Navigation/Navigation";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
@@ -10,35 +9,15 @@ import Signup from "../Signup/Signup";
 import "./App.css";
 
 function App() {
-  const [isSigninPopupOpen, setIsSigninPopupOpen] = useState(false);
-  const [isSignupPopupOpen, setIsSignupPopupOpen] = useState(false);
-
-  //----------------Event Handlers----------------
-
-  const handleSigninClick = () => {
-    setIsSigninPopupOpen(true);
-  };
-
-  const closeAllPopups = () => {
-    setIsSigninPopupOpen(false);
-  };
-
   return (
     <div className="App">
-      <Navigation />
       <Routes>
-        <Route
-          path="/"
-          element={<Main handleLoginClick={handleSigninClick} />}
-        />
-        <Route
-          path="/saved-news"
-          element={<SavedNews news={savedArticles} />}
-        />
+        <Route path="/" element={<Main />} />
+        <Route path="/saved-news" element={<SavedNews />} />
       </Routes>
       <Footer />
-      <Login isOpen={isSigninPopupOpen} onClose={closeAllPopups} onSubmit="" />
-      <Signup isOpen={isSignupPopupOpen} onClose={closeAllPopups} onSubmit="" />
+      <Login />
+      <Signup />
     </div>
   );
 }
