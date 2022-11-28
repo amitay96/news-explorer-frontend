@@ -5,6 +5,7 @@ import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 import Signin from "../Signin/Signin";
 import Signup from "../Signup/Signup";
+import Tooltip from "../Tooltip/Tooltip";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Footer />
       <Signin />
       <Signup />
+      <Tooltip />
     </div>
   );
 }

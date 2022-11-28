@@ -24,7 +24,7 @@ function Signup({ isOpen, onClose, onSubmit }) {
     >
       <fieldset className="form__fieldset">
         <label className="form__label">
-          Email:
+          Email
           <input
             type="email"
             name="email"
@@ -35,7 +35,7 @@ function Signup({ isOpen, onClose, onSubmit }) {
           <span id="signup-email-input-error"></span>
         </label>
         <label className="form__label">
-          Password:
+          Password
           <input
             type="password"
             name="password"
@@ -44,6 +44,17 @@ function Signup({ isOpen, onClose, onSubmit }) {
             id="signup-password-input"
           />
           <span id="signup-password-input-error"></span>
+        </label>
+        <label className="form__label">
+          Username
+          <input
+            type="string"
+            name="username"
+            className="form__input"
+            placeholder="Enter username"
+            id="signup-username-input"
+          />
+          <span id="signup-username-input-error"></span>
         </label>
       </fieldset>
     </PopupWithForm>

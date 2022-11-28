@@ -14,7 +14,8 @@
     transition: visibility 0.5s linear, opacity 0.5s linear;
     z-index: 2;
     opacity: 0;
-  }
+}
+
 
 .popup__active {
     visibility: visible;
@@ -47,6 +48,10 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+}
+
+.popup__container_type_tooltip {
+    padding: 43px 36px 51px;
 }
 
 @media screen and (max-width: 620px) {
