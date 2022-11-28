@@ -19,6 +19,6 @@ const LocationProvider = ({ children }) => {
 
 export default LocationProvider;
 
-export const usePopup = () => {
+export const useLocations = () => {
   return useContext(LocationContext);
 };
