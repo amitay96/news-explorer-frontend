@@ -1,5 +1,5 @@
 import React from "react";
-import Popup from "../Popup/Popup";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { usePopup } from "../../contexts/PopupContext";
 import "./Signin.css";
 
@@ -8,62 +8,43 @@ const Signin = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-  };
-
-  const handleRedirect = () => {
     popupContext.closeAllPopups();
-    popupContext.openPopup("signin");
   };
 
   return (
-    <Popup name="signin" isOpen={popupContext.popupStates.signin}>
-      <h2 className="form__title">Sign in</h2>
-      <form
-        className="form"
-        name="signin-form"
-        action="submit"
-        onSubmit={handleSubmit}
-      >
-        <fieldset className="form__fieldset">
-          <label className="form__label">
-            Email:
-            <input
-              type="email"
-              name="email"
-              className="form__input"
-              placeholder="Enter email"
-              id="email-input"
-            />
-            <span id="email-input-error"></span>
-          </label>
-          <label className="form__label">
-            Password:
-            <input
-              type="password"
-              name="password"
-              className="form__input"
-              placeholder="Enter password"
-              id="password-input"
-            />
-            <span id="password-input-error"></span>
-          </label>
-        </fieldset>
-        <button className="form__button" type="submit">
-          Sign in
-        </button>
-      </form>
-
-      <p className="form__footer-text">
-        or{" "}
-        <span
-          to="/signup"
-          className="form__footer-link"
-          onClick={handleRedirect}
-        >
-          Sign up
-        </span>
-      </p>
-    </Popup>
+    <PopupWithForm
+      name="signin"
+      title="Sign in"
+      buttonText="Login"
+      redirectText="Sign up"
+      isOpen={popupContext.popupStates.signin}
+      onSubmit={handleSubmit}
+    >
+      <fieldset className="form__fieldset">
+        <label className="form__label">
+          Email:
+          <input
+            type="email"
+            name="email"
+            className="form__input"
+            placeholder="Enter email"
+            id="email-input"
+          />
+          <span id="email-input-error"></span>
+        </label>
+        <label className="form__label">
+          Password:
+          <input
+            type="password"
+            name="password"
+            className="form__input"
+            placeholder="Enter password"
+            id="password-input"
+          />
+          <span id="password-input-error"></span>
+        </label>
+      </fieldset>
+    </PopupWithForm>
   );
 };
 
