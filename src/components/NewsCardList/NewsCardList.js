@@ -6,8 +6,8 @@ import "./NewsCardList.css";
 const NewsCardList = (props) => {
   return (
     <ul className="newsCardList">
-      {savedArticles.map((card) => {
-        return <NewsCard newsCard={card} key={card.id} />;
+      {savedArticles.map((card, index) => {
+        return <NewsCard newsCard={card} key={index} />;
       })}
     </ul>
   );
