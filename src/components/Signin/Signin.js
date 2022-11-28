@@ -1,16 +1,23 @@
 import React from "react";
 import Popup from "../Popup/Popup";
-import "./Login.css";
+import { usePopup } from "../../contexts/PopupContext";
+import "./Signin.css";
 
-function Login({ isOpen, onClose, onSubmit }) {
+const Signin = () => {
+  const popupContext = usePopup();
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+  };
+
   return (
-    <Popup name="login" isOpen={isOpen} onClose={onClose}>
+    <Popup name="signin" isOpen={popupContext.popupStates.signin}>
       <h2 className="form__title">Sign in</h2>
       <form
         className="form"
-        name="login-form"
+        name="signin-form"
         action="submit"
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit}
       >
         <fieldset className="form__fieldset">
           <label className="form__label">
@@ -22,7 +29,7 @@ function Login({ isOpen, onClose, onSubmit }) {
               placeholder="Enter email"
               id="email-input"
             />
-            <span id="name-input-error"></span>
+            <span id="email-input-error"></span>
           </label>
           <label className="form__label">
             Password:
@@ -33,7 +40,7 @@ function Login({ isOpen, onClose, onSubmit }) {
               placeholder="Enter password"
               id="password-input"
             />
-            <span id="name-input-error"></span>
+            <span id="password-input-error"></span>
           </label>
         </fieldset>
         <button className="form__button" type="submit">
@@ -53,6 +60,6 @@ function Login({ isOpen, onClose, onSubmit }) {
       </p>
     </Popup>
   );
-}
+};
 
-export default Login;
+export default Signin;
