@@ -3,7 +3,7 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import "./SavedNews.css";
 
-const SavedNews = (news) => {
+const SavedNews = () => {
   return (
     <>
       <SavedNewsHeader />

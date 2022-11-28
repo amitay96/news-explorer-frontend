@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { usePopup } from "../../contexts/PopupContext";
-import logout_icon from "../../images/icons/logout.svg";
+
 import "./Navigation.css";
 
-const Navigation = (props) => {
+const Navigation = (isMain) => {
   const { openPopup } = usePopup();
 
   const handleLoginClick = () => {
@@ -12,30 +12,41 @@ const Navigation = (props) => {
   };
 
   return (
-    <nav className="header__navigation">
-      <ul className="header__links">
-        <li className="header__link-item header__link-home_active">
-          <Link to="/" className="header__link">
+    <nav className="navigation" onClick={() => console.log(isMain)}>
+      <ul
+        className={
+          isMain
+            ? "navigation__links"
+            : "navigation__links navigation__links_saved"
+        }
+      >
+        <li
+          className={
+            isMain
+              ? "navigation__link-item navigation__link-home_active"
+              : "navigation__link-item"
+          }
+        >
+          <Link to="/" className="navigation__link">
             Home
           </Link>
         </li>
-        <li className="header__link-item">
-          <Link to="/saved-news" className="header__link">
+        <li
+          className={
+            isMain
+              ? "navigation__link-item"
+              : "navigation__link-item navigation__link-saved_active"
+          }
+        >
+          <Link to="/saved-news" className="navigation__link">
             Saved Articles
           </Link>
         </li>
-        <li
-          className="header__link-item header__user_login"
-          onClick={handleLoginClick}
-        >
-          Sign in
-          <img
-            src={logout_icon}
-            className="header__user_logout-icon"
-            alt="logout icon"
-          />
-        </li>
       </ul>
+      <button className="navigation__button" onClick={handleLoginClick}>
+        Sign in
+        <span className="navigation__user_logout-icon" alt="logout icon" />
+      </button>
     </nav>
   );
 };
