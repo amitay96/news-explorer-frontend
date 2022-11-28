@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { usePopup } from "../../contexts/PopupContext";
 import "./Popup.css";
 
-const Popup = ({ isOpen, name, onClose, children }) => {
+const Popup = ({ isOpen, name, children }) => {
   const popupsContext = usePopup();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Popup = ({ isOpen, name, onClose, children }) => {
       document.removeEventListener("keydown", closeByEscape);
       document.removeEventListener("mousedown", closeByOverlay);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, popupsContext.closeAllPopups]);
 
   return (
     <div
@@ -35,7 +35,7 @@ const Popup = ({ isOpen, name, onClose, children }) => {
         <button
           className={"popup__close-button"}
           type="button"
-          onClick={onClose}
+          onClick={popupsContext.closeAllPopups}
         />
       </div>
     </div>

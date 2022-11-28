@@ -1,9 +1,17 @@
 import React from "react";
 import Popup from "../Popup/Popup";
-import { Link } from "react-router-dom";
+import { usePopup } from "../../contexts/PopupContext";
+
 import "./Signup.css";
 
 function Signup({ isOpen, onClose, onSubmit }) {
+  const popupContext = usePopup();
+
+  const handleRedirect = () => {
+    popupContext.closeAllPopups();
+    popupContext.openPopup("signin");
+  };
+
   return (
     <Popup name="signup" isOpen={isOpen} onClose={onClose}>
       <h2 className="popup__title">Sign up</h2>
@@ -21,9 +29,9 @@ function Signup({ isOpen, onClose, onSubmit }) {
               name="email"
               className="form__input"
               placeholder="Enter email"
-              id="email-input"
+              id="signup-email-input"
             />
-            <span id="name-input-error"></span>
+            <span id="signup-email-input-error"></span>
           </label>
           <label className="form__label">
             Password:
@@ -32,16 +40,16 @@ function Signup({ isOpen, onClose, onSubmit }) {
               name="password"
               className="form__input"
               placeholder="Enter password"
-              id="password-input"
+              id="signup-password-input"
             />
-            <span id="name-input-error"></span>
+            <span id="signup-password-input-error"></span>
           </label>
           <button
             className="form__button"
             type="submit"
             // onClick={}
           >
-            Sign in
+            Sign up
           </button>
         </fieldset>
       </form>
@@ -51,7 +59,7 @@ function Signup({ isOpen, onClose, onSubmit }) {
         <span
           to="/signup"
           className="form__footer-link"
-          // onClick={toggle}
+          onClick={handleRedirect}
         >
           Sign in
         </span>

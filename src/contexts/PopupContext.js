@@ -1,21 +1,24 @@
 import React, { useState, createContext, useContext } from "react";
 
-export const PopupContext = createContext();
+const PopupContext = createContext();
 
 const PopupProvider = ({ children }) => {
-  const { popupStates, setPopupStates } = useState({
+  const popupsClosed = {
     signin: false,
     signup: false,
     registered: false,
     navigation: false,
-  });
+  };
+
+  const [popupStates, setPopupStates] = useState(popupsClosed);
 
   const openPopup = (popupType) => {
     setPopupStates({ [popupType]: true });
+    console.log(popupStates);
   };
 
   const closeAllPopups = () => {
-    setPopupStates(popupStates.map((popup) => (popupStates[popup] = false)));
+    setPopupStates(popupsClosed);
   };
 
   const popups = { popupStates, setPopupStates, openPopup, closeAllPopups };
@@ -28,6 +31,5 @@ const PopupProvider = ({ children }) => {
 export default PopupProvider;
 
 export const usePopup = () => {
-  const context = useContext(PopupContext);
-  return context;
+  return useContext(PopupContext);
 };

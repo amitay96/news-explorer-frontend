@@ -10,6 +10,11 @@ const Signin = () => {
     evt.preventDefault();
   };
 
+  const handleRedirect = () => {
+    popupContext.closeAllPopups();
+    popupContext.openPopup("signin");
+  };
+
   return (
     <Popup name="signin" isOpen={popupContext.popupStates.signin}>
       <h2 className="form__title">Sign in</h2>
@@ -53,7 +58,7 @@ const Signin = () => {
         <span
           to="/signup"
           className="form__footer-link"
-          // onClick={openSignup}
+          onClick={handleRedirect}
         >
           Sign up
         </span>
