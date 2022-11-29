@@ -1,6 +1,7 @@
 import React from "react";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
+import { savedArticles } from "../../data/index";
 import "./SavedNews.css";
 
 const SavedNews = () => {
@@ -17,7 +18,7 @@ const SavedNews = () => {
           </span>
         </p>
       </section>
-      <NewsCardList />
+      <NewsCardList news={savedArticles} />
     </>
   );
 };

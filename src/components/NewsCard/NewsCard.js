@@ -1,11 +1,25 @@
 import React from "react";
+import { useLocations } from "../../contexts/LocationContext";
 import "./NewsCard.css";
 
 const NewsCard = (props) => {
+  const { isMain } = useLocations();
+  console.log(isMain);
+
   return (
     <li className="newsCard">
-      <button className="newsCard__save_button" type="button" />
       <p className="newsCard__keyword">{props.newsCard.keyword}</p>
+      <button
+        className={
+          isMain
+            ? "newsCard__button newsCard__button_home"
+            : "newsCard__button newsCard__button_saved"
+        }
+        type="button"
+      />
+      <p className="newsCard__help">
+        {isMain ? "Sign in to save articles" : "Remove from saved"}
+      </p>
       <img
         className="newsCard__image"
         src={props.newsCard.image}

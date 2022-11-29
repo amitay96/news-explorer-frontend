@@ -14,22 +14,6 @@
     object-fit: cover;
 }
 
-.newsCard__save_button {
-    background: url("../../images/icons/save_icon.svg") center no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    height: 40px;
-    width: 40px;
-    border: none;
-    transition: all 0.5s;
-}
-
-.newsCard__save_button:hover {
-    background: url("../../images/icons/save_icon_hover.svg") center no-repeat;
-}
-
 .newsCard__keyword {
     background-color: white;
     position: absolute;
@@ -43,6 +27,54 @@
     font-size: 14px;
     line-height: 1.77;
 }
+
+.newsCard__help {
+    visibility: hidden;
+    opacity: 0;
+    background-color: white;
+    position: absolute;
+    top: 24px;
+    right: 69px;
+    padding: 12px 26px;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    transition: all 0.5s;
+}
+
+.newsCard__button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.newsCard__button:hover + .newsCard__help {
+    visibility: visible;
+    opacity: 1;
+}
+
+.newsCard__button_home {
+    background: #FFF url("../../images/icons/save_icon.svg") center no-repeat;
+}
+
+.newsCard__button_home:hover {
+    background: #FFF url("../../images/icons/save_icon_hover.svg") center no-repeat;
+}
+
+.newsCard__button_saved {
+    background: #FFF url("../../images/icons/delete_icon.svg") center no-repeat;
+}
+
+.newsCard__button_saved:hover {
+    background: #FFF url("../../images/icons/delete_icon_active.svg") center no-repeat;
+}
+
 
 .newsCard__text-area {
     padding: 20px 24px;
