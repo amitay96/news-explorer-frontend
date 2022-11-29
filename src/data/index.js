@@ -32,7 +32,7 @@ export const savedArticles = [
   },
   {
     keyword: "Parks",
-    title: "Nostalgic Photos of Tourists in U.S. National Parks",
+    title: "Grand Teton Renews Historic Crest Trail",
     text:
       "“The linking together of the Cascade and Death Canyon trails, at their heads, took place on October 1, 1933, and marked the first step in the realization of a plan whereby the hiker will be...",
     date: "November 4, 2020",
@@ -47,5 +47,33 @@ export const savedArticles = [
     date: "March 16, 2020",
     source: "treehugger",
     image: cardImg_05,
+  },
+];
+
+export const searchArticles = [
+  {
+    keyword: "Nature",
+    title: "Everyone Needs a Special 'Sit Spot' in Nature",
+    text: `Ever since I read Richard Louv's influential book, "Last Child in the Woods", the idea of having a special "sit spot" has stuck with me. This advice, which Louv attributes to nature educator Jon Young, is for both adults and children to find...`,
+    date: "November 4, 2020",
+    source: "treehugger",
+    image: cardImg_01,
+  },
+  {
+    keyword: "Nature",
+    title: "Nature makes you better",
+    text: `We all know how good nature can make us feel. We have known it for millennia: the sound of the ocean, the scents of a forest, the way dappled sunlight dances through leaves.`,
+    date: "February 19, 2019",
+    source: "national geographic",
+    image: cardImg_02,
+  },
+  {
+    keyword: "Parks",
+    title: "Grand Teton Renews Historic Crest Trail",
+    text:
+      "“The linking together of the Cascade and Death Canyon trails, at their heads, took place on October 1, 1933, and marked the first step in the realization of a plan whereby the hiker will be...",
+    date: "November 4, 2020",
+    source: "National parks traveler",
+    image: cardImg_04,
   },
 ];
