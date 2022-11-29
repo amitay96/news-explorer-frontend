@@ -8,8 +8,9 @@ const LocationProvider = ({ children }) => {
   const location = useLocation();
 
   useEffect(() => {
-    location.path !== "/" ? setIsMain(false) : setIsMain(true);
+    location.pathname !== "/" ? setIsMain(false) : setIsMain(true);
   }, [location]);
+
   return (
     <LocationContext.Provider value={isMain}>
       {children}
@@ -20,5 +21,6 @@ const LocationProvider = ({ children }) => {
 export default LocationProvider;
 
 export const useLocations = () => {
-  return useContext(LocationContext);
+  const isMain = useContext(LocationContext);
+  return { isMain };
 };
