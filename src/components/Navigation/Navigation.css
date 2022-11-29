@@ -1,6 +1,8 @@
 .navigation {
     height: 100%;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items : center;
     gap: 64px;
 }
@@ -16,6 +18,13 @@
 
 .navigation__logo_type_saved {
     color: #000;
+}
+
+.navigation__area {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    height: 100%;
 }
 
 .navigation__links {
