@@ -4,22 +4,28 @@ import { usePopup } from "../../contexts/PopupContext";
 
 import "./Navigation.css";
 
-const Navigation = (isMain) => {
+const Navigation = ({ isMain }) => {
   const { openPopup } = usePopup();
+  console.log(isMain);
 
   const handleLoginClick = () => {
     openPopup("signin");
   };
 
   return (
-    <nav className="navigation" onClick={() => console.log(isMain)}>
-      <ul
+    <nav
+      className={isMain ? "navigation" : "navigation saved__header_container"}
+    >
+      <p
         className={
           isMain
-            ? "navigation__links"
-            : "navigation__links navigation__links_saved"
+            ? "navigation__logo"
+            : "navigation__logo navigation__logo_type_saved"
         }
       >
+        NewsExplorer
+      </p>
+      <ul className="navigation__links">
         <li
           className={
             isMain
@@ -27,7 +33,14 @@ const Navigation = (isMain) => {
               : "navigation__link-item"
           }
         >
-          <Link to="/" className="navigation__link">
+          <Link
+            to="/"
+            className={
+              isMain
+                ? "navigation__link"
+                : "navigation__link navigation__link_type_saved"
+            }
+          >
             Home
           </Link>
         </li>
@@ -38,14 +51,35 @@ const Navigation = (isMain) => {
               : "navigation__link-item navigation__link-saved_active"
           }
         >
-          <Link to="/saved-news" className="navigation__link">
+          <Link
+            to="/saved-news"
+            className={
+              isMain
+                ? "navigation__link"
+                : "navigation__link navigation__link_type_saved"
+            }
+          >
             Saved Articles
           </Link>
         </li>
       </ul>
-      <button className="navigation__button" onClick={handleLoginClick}>
-        Sign in
-        <span className="navigation__user_logout-icon" alt="logout icon" />
+      <button
+        className={
+          isMain
+            ? "navigation__button"
+            : "navigation__button navigation__button_type_saved"
+        }
+        onClick={handleLoginClick}
+      >
+        {isMain ? "Sign in" : "Elise"}
+        <span
+          className={
+            isMain
+              ? "navigation__user_logout-icon"
+              : "navigation__user_logout-icon navigation__user_logout-icon_active"
+          }
+          alt="logout icon"
+        />
       </button>
     </nav>
   );

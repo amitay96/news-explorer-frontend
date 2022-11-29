@@ -5,12 +5,10 @@ import "./Header.css";
 
 const Header = () => {
   const { isMain } = useLocations();
-  // console.log(isMain);
 
   return (
     <header className="header">
       <div className="header__container">
-        <p className="header__logo">NewsExplorer</p>
         <Navigation isMain={isMain} />
       </div>
     </header>

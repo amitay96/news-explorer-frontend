@@ -8,8 +8,7 @@ const SavedNewsHeader = () => {
 
   return (
     <header className="header saved__header">
-      <div className="header__container saved__header_container">
-        <p className="header__logo saved__header_logo">NewsExplorer</p>
+      <div className="header__container">
         <Navigation isMain={isMain} />
       </div>
     </header>
