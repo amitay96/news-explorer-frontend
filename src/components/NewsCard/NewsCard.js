@@ -25,7 +25,7 @@ const NewsCard = (props) => {
         src={props.newsCard.image}
         alt={props.newsCard.title}
       />
-      <div className="newsCard__text-area">
+      <div className="newsCard__text-container">
         <p className="newsCard__date">{props.newsCard.date}</p>
         <p className="newsCard__title">{props.newsCard.title}</p>
         <p className="newsCard__text">{props.newsCard.text}</p>

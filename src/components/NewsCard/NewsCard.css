@@ -1,14 +1,16 @@
 .newsCard {
-    list-style: none;
     position: relative;
-    width: 400px;
+    min-height: 576px;
+    max-width: 400px;
+    /* height: 100%; */
     border-radius: 16px;
     background-color: white;
+    object-fit: contain;
 }
 
 .newsCard__image {
     width: 100%;
-    max-height: 272px;
+    height: 272px;
     display: block;
     border-radius: 16px 16px 0 0;
     object-fit: cover;
@@ -54,7 +56,7 @@
     transition: all 0.5s;
 }
 
-.newsCard__button:hover + .newsCard__help {
+.newsCard__button:hover+.newsCard__help {
     visibility: visible;
     opacity: 1;
 }
@@ -64,7 +66,7 @@
 }
 
 .newsCard__button_home:hover {
-    background: #FFF url("../../images/icons/save_icon_hover.svg") center no-repeat;
+    background: #FFF url("../../images/icons/save_icon-hover.svg") center no-repeat;
 }
 
 .newsCard__button_saved {
@@ -72,33 +74,42 @@
 }
 
 .newsCard__button_saved:hover {
-    background: #FFF url("../../images/icons/delete_icon_active.svg") center no-repeat;
+    background: #FFF url("../../images/icons/delete_icon-active.svg") center no-repeat;
 }
 
 
-.newsCard__text-area {
-    padding: 20px 24px;
-    margin: 0;
+.newsCard__text-container {
+    max-height: 100%;
+    margin: 20px 24px 24px;
+    display: grid;
+    grid-template-rows: 24px 12px minmax(60px, auto) minmax(16px, auto) minmax(auto, 110px) 18px 20px;
 }
 
 .newsCard__date {
-    margin: 0 0 12px;
+    margin: 0;
     font-family: 'Source Sans Pro';
     color: #B6BCBF;
+    grid-row: 1;
 }
 
 .newsCard__title {
-    margin: 0 0 16px;
+    margin: 0;
     font-family: 'Roboto Slab';
     font-weight: 400;
     font-size: 26px;
     line-height: 1.15;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    grid-row: 3;
 }
 
 .newsCard__text {
-    margin: 0 0 18px;
+    margin: 0;
     font-size: 16px;
     line-height: 1.38;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    grid-row: 5;
 }
 
 .newsCard__source {
@@ -109,4 +120,28 @@
     line-height: 1.25;
     letter-spacing: 0.4px;
     text-transform: uppercase;
+    /* text-overflow: ellipsis; */
+    overflow: hidden;
+    grid-row: 7;
+}
+
+@media screen and (max-width: 960px) {
+    .newsCard {
+        min-height: 420px;
+    }
+
+    .newsCard__title {
+        font-size: 24px;
+        line-height: 1.09;
+    }
+
+    .newsCard__image {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .newsCard__image {
+        height: 196px;
+    }
 }

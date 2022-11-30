@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { usePopup } from "../../contexts/PopupContext";
-
+import menuIcon from "../../images/icons/menu_icon.svg";
+import menuIconSaved from "../../images/icons/menu_icon_saved.svg";
 import "./Navigation.css";
 
 const Navigation = ({ isMain }) => {
@@ -9,6 +10,10 @@ const Navigation = ({ isMain }) => {
 
   const handleLoginClick = () => {
     openPopup("signin");
+  };
+
+  const handleMenuClick = () => {
+    openPopup("navigation");
   };
 
   return (
@@ -82,6 +87,11 @@ const Navigation = ({ isMain }) => {
           />
         </button>
       </div>
+      <button
+        className="navigation__menu_button"
+        onClick={handleMenuClick}
+        style={{ backgroundImage: `url(${isMain ? menuIcon : menuIconSaved})` }}
+      />
     </nav>
   );
 };
