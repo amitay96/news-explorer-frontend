@@ -4,7 +4,7 @@ import "./About.css";
 
 function About() {
   return (
-    <div className="About">
+    <section className="about">
       <img
         src={authorPic}
         className="about__pic"
@@ -19,7 +19,7 @@ function About() {
           there, and how you can help potential customers.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 
