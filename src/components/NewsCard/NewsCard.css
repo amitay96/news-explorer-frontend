@@ -1,8 +1,7 @@
 .newsCard {
     position: relative;
-    min-height: 576px;
+    max-height: 576px;
     max-width: 400px;
-    /* height: 100%; */
     border-radius: 16px;
     background-color: white;
     object-fit: contain;
@@ -80,9 +79,9 @@
 
 .newsCard__text-container {
     max-height: 100%;
-    margin: 20px 24px 24px;
+    padding: 20px 24px 24px;
     display: grid;
-    grid-template-rows: 24px 12px minmax(60px, auto) minmax(16px, auto) minmax(auto, 110px) 18px 20px;
+    grid-template-rows: 24px 12px 60px 16px 110px 18px 20px;
 }
 
 .newsCard__date {
@@ -120,18 +119,20 @@
     line-height: 1.25;
     letter-spacing: 0.4px;
     text-transform: uppercase;
-    /* text-overflow: ellipsis; */
+    text-overflow: ellipsis;
     overflow: hidden;
+    color:#B6BCBF;
     grid-row: 7;
 }
 
 @media screen and (max-width: 960px) {
-    .newsCard {
-        min-height: 420px;
+    .newsCard__text-container {
+        padding: 16px;
+        grid-template-rows: 24px 12px 72px 10px 88px 12px 20px;
     }
 
     .newsCard__title {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 1.09;
     }
 
@@ -141,6 +142,15 @@
 }
 
 @media screen and (max-width: 500px) {
+    .newsCard {
+        height: 440px;
+        max-width: 100%;
+    }
+
+    .newsCard__text-container {
+        grid-template-rows: 24px 10px 48px 14px 88px 8px 20px;
+    }
+
     .newsCard__image {
         height: 196px;
     }
