@@ -1,5 +1,5 @@
 .newsCardList {
-    padding: 64px 0;
+    padding: 64px calc(104 / 1440 * 100%);
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, auto));
@@ -13,7 +13,7 @@
 @media screen and (max-width: 960px) {
     .newsCardList {
         grid-template-columns: repeat(auto-fit, minmax(224px, auto));
-        padding: 32px 0;
+        padding: 32px 40px;
         gap: 8px;
     }
 }
@@ -21,7 +21,7 @@
 @media screen and (max-width: 480px) {
     .newsCardList {
         grid-template-columns: repeat(auto-fit, minmax(272px, auto));
-        padding: 24px 0 16px;
+        padding: 24px 16px 16px;
         gap: 8px;
     }
 }

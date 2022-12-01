@@ -4,7 +4,6 @@ import "./NewsCard.css";
 
 const NewsCard = (props) => {
   const { isMain } = useLocations();
-  console.log(isMain);
 
   return (
     <li className="newsCard">
