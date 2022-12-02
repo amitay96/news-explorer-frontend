@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ghIcon from "../../images/icons/github_icon.svg";
+import fbIcon from "../../images/icons/fb_icon.svg";
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <p className="footer__copyright">© 2022 Supersite, Powered by News API</p>
       <div className="footer__links_container">
         <ul className="footer__links">
           <li className="footer__link">
@@ -14,16 +15,48 @@ const Footer = () => {
             </Link>
           </li>
           <li className="footer__link">
-            <Link className="footer__link" to="https://practicum.com/">
+            <a
+              href="https://practicum.yandex.com/"
+              className="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Practicum
-            </Link>
+            </a>
           </li>
         </ul>
         <ul className="footer__links footer__social_links">
-          <li className="footer__social_link footer__social_link-github"></li>
-          <li className="footer__social_link footer__social_link-facebook"></li>
+          <li className="footer__social_link">
+            <a
+              href="https://github.com/amitay96/"
+              className="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={ghIcon}
+                className="footer__social_link"
+                alt="github link"
+              />
+            </a>
+          </li>
+          <li className="footer__social_link">
+            <a
+              href="https://www.facebook.com/Amitay96/"
+              className="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={fbIcon}
+                className="footer__social_link"
+                alt="facebook link"
+              />
+            </a>
+          </li>
         </ul>
       </div>
+      <p className="footer__copyright">© 2022 Supersite, Powered by News API</p>
     </footer>
   );
 };
