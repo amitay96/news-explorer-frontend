@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import Signin from "../Signin/Signin";
 import Signup from "../Signup/Signup";
 import Tooltip from "../Tooltip/Tooltip";
+import Menu from "../Menu/Menu";
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Signin />
       <Signup />
       <Tooltip />
+      <Menu />
     </div>
   );
 }

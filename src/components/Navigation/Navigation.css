@@ -8,11 +8,12 @@
 }
 
 .navigation__logo {
+    margin: 0;
+    color: #FFF;
     font-family: 'Roboto Slab';
     font-weight: 700;
     font-size: 20px;
     line-height: 1.2;
-    margin: 30px 0 26px;
     cursor: pointer;
 }
 
@@ -58,12 +59,12 @@
     height: 100%;
 }
 
-.navigation__link-home_active {
+.navigation__link_home-active {
     border-bottom: 3px solid #FFFFFF;
     width: 68px;
 }
 
-.navigation__link-saved_active {
+.navigation__link_saved-active {
     border-bottom: 3px solid #000;
     width: 160px;
 }
@@ -89,18 +90,18 @@
     padding: 11px 15px 11px 19px;
 }
 
-.navigation__user_logout-icon {
+.navigation__user_logout_icon {
     background: url("../../images/icons/logout_icon_saved.svg");
     display: none;
     width: 24px;
     height: 24px;
 }
 
-.navigation__user_logout-icon_active {
+.navigation__user_logout_icon-active {
     display: block;
 }
 
-.navigation__menu_button {
+.menu_button {
     display: none;
     background: transparent;
     background-position: center;
@@ -119,13 +120,13 @@
     }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 650px) {
     .navigation__area {
         display: none;
     }
 
 
-    .navigation__menu_button {
+    .menu_button {
         display: block;
     }
 }

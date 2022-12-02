@@ -13,7 +13,7 @@ const Navigation = ({ isMain }) => {
   };
 
   const handleMenuClick = () => {
-    openPopup("navigation");
+    openPopup("menu");
   };
 
   return (
@@ -27,14 +27,23 @@ const Navigation = ({ isMain }) => {
             : "navigation__logo navigation__logo_type_saved"
         }
       >
-        NewsExplorer
+        <Link
+          to="/"
+          className={
+            isMain
+              ? "navigation__link"
+              : "navigation__link navigation__link_type_saved"
+          }
+        >
+          NewsExplorer
+        </Link>
       </p>
       <div className="navigation__area">
         <ul className="navigation__links">
           <li
             className={
               isMain
-                ? "navigation__link-item navigation__link-home_active"
+                ? "navigation__link-item navigation__link_home-active"
                 : "navigation__link-item"
             }
           >
@@ -53,7 +62,7 @@ const Navigation = ({ isMain }) => {
             className={
               isMain
                 ? "navigation__link-item"
-                : "navigation__link-item navigation__link-saved_active"
+                : "navigation__link-item navigation__link_saved-active"
             }
           >
             <Link
@@ -80,15 +89,15 @@ const Navigation = ({ isMain }) => {
           <span
             className={
               isMain
-                ? "navigation__user_logout-icon"
-                : "navigation__user_logout-icon navigation__user_logout-icon_active"
+                ? "navigation__user_logout_icon"
+                : "navigation__user_logout-icon navigation__user_logout_icon-active"
             }
             alt="logout icon"
           />
         </button>
       </div>
       <button
-        className="navigation__menu_button"
+        className="menu_button"
         onClick={handleMenuClick}
         style={{ backgroundImage: `url(${isMain ? menuIcon : menuIconSaved})` }}
       />

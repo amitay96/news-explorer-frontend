@@ -12,9 +12,9 @@ const Main = (props) => {
     <section className="Main">
       <Header />
       <SearchForm />
+      <SearchResults />
       {/* <Preloader /> */}
       {/* <NotFound /> */}
-      <SearchResults />
       <About />
     </section>
   );
