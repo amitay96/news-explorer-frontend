@@ -15,8 +15,9 @@
     font-weight: 500;
     align-self: center;
     background: #FFF;
-    max-width: fit-content;
-    padding: 20px 99px;
+    width: 288px;
+    padding: 20px 0;
+    /* padding: 20px 99px; */
     border: none;
     border-radius: 80px;
     transition: all 0.5s;
@@ -32,10 +33,18 @@
         font-size: 30px;
         line-height: 1.13;
     }
+
+    .search-results__button {
+        width: 240px;
+    }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 400px) {
     .search-results__title {
         margin: 0 0 34px;
+    }
+
+    .search-results__button {
+        width: 100%;
     }
 }
