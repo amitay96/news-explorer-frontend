@@ -29,6 +29,7 @@ const Signin = () => {
             className="form__input"
             placeholder="Enter email"
             id="email-input"
+            required
           />
           <span id="email-input-error"></span>
         </label>
@@ -40,6 +41,7 @@ const Signin = () => {
             className="form__input"
             placeholder="Enter password"
             id="password-input"
+            required
           />
           <span id="password-input-error"></span>
         </label>

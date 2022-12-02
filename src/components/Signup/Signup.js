@@ -32,7 +32,10 @@ function Signup({ isOpen, onClose, onSubmit }) {
             placeholder="Enter email"
             id="signup-email-input"
           />
-          <span id="signup-email-input-error"></span>
+          <span
+            className="form__input_error"
+            id="signup-email-input-error"
+          ></span>
         </label>
         <label className="form__label">
           Password
@@ -42,8 +45,12 @@ function Signup({ isOpen, onClose, onSubmit }) {
             className="form__input"
             placeholder="Enter password"
             id="signup-password-input"
+            required
           />
-          <span id="signup-password-input-error"></span>
+          <span
+            className="form__input_error"
+            id="signup-password-input-error"
+          ></span>
         </label>
         <label className="form__label">
           Username
@@ -53,9 +60,14 @@ function Signup({ isOpen, onClose, onSubmit }) {
             className="form__input"
             placeholder="Enter username"
             id="signup-username-input"
+            required
           />
-          <span id="signup-username-input-error"></span>
+          <span
+            className="form__input_error"
+            id="signup-username-input-error"
+          ></span>
         </label>
+        <p className="form__error_text"></p>
       </fieldset>
     </PopupWithForm>
   );
