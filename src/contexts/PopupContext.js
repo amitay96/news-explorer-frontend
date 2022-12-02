@@ -7,7 +7,7 @@ const PopupProvider = ({ children }) => {
     signin: false,
     signup: false,
     registered: false,
-    navigation: false,
+    menu: false,
   };
 
   const [popupStates, setPopupStates] = useState(popupsClosed);
