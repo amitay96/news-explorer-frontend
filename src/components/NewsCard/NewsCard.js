@@ -7,7 +7,7 @@ const NewsCard = (props) => {
 
   return (
     <li className="newsCard">
-      <p className="newsCard__keyword">{props.newsCard.keyword}</p>
+      {!isMain && <p className="newsCard__keyword">{props.newsCard.keyword}</p>}
       <button
         className={
           isMain
@@ -15,6 +15,7 @@ const NewsCard = (props) => {
             : "newsCard__button newsCard__button_saved"
         }
         type="button"
+        aria-label="save or delete button"
       />
       <p className="newsCard__help">
         {isMain ? "Sign in to save articles" : "Remove from saved"}
@@ -28,9 +29,9 @@ const NewsCard = (props) => {
         <p className="newsCard__date newsCard__text-container-item">
           {props.newsCard.date}
         </p>
-        <p className="newsCard__title newsCard__text-container-item">
+        <h2 className="newsCard__title newsCard__text-container-item">
           {props.newsCard.title}
-        </p>
+        </h2>
         <p className="newsCard__text newsCard__text-container-item">
           {props.newsCard.text}
         </p>

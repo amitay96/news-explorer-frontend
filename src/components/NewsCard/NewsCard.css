@@ -85,6 +85,7 @@
 }
 
 .newsCard__text-container-item {
+    margin: 0;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -92,16 +93,13 @@
 }
 
 .newsCard__date {
-    margin: 0;
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Sans Pro', Arial, sans-serif;
     color: #B6BCBF;
     grid-row: 1;
 }
 
 .newsCard__title {
-    margin: 0;
-    font-family: 'Roboto Slab';
-    font-weight: 400;
+    font-family: 'Roboto Slab', Arial, sans-serif;
     font-size: 26px;
     line-height: 1.15;
     grid-row: 3;
@@ -109,7 +107,6 @@
 }
 
 .newsCard__text {
-    margin: 0;
     font-size: 16px;
     line-height: 1.38;
     grid-row: 5;
@@ -117,8 +114,7 @@
 }
 
 .newsCard__source {
-    margin: 0;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', Arial, sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.25;
