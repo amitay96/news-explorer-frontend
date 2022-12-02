@@ -5,7 +5,7 @@
   grid-template-columns: minmax(232px, max-content) minmax(288px, max-content);
 }
 
-.about__text_container {
+.about__info {
   max-width: 600px;
 }
 
@@ -14,14 +14,14 @@
   height: auto;
 }
 
-.about__title {
+.about__info_title {
   font-family: 'Roboto Slab';
   font-size: 40px;
   line-height: 1.15;
   margin: 0 0 24px 0;
 }
 
-.about__text {
+.about__info_text {
   margin: 0;
 }
 
@@ -36,14 +36,14 @@
     max-height: 232px;
   }
 
-  .about__text_container {
+  .about__info {
     max-width: 424px;
     max-height: 424px;
     width: 100%;
     gap: 16px;
   }
 
-  .about__title {
+  .about__info_title {
     font-size: 30px;
     line-height: 40px;
     margin: 0 0 16px 0;
@@ -64,7 +64,7 @@
     max-height: 350px;
   }
 
-  .about__text_container {
+  .about__info {
     max-width: 464px;
     max-height: 464px;
     width: 100%;

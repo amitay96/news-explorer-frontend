@@ -17,20 +17,20 @@
     margin: 32px 0 88px;
 }
 
-.searchForm__input_container {
+.searchForm__container {
     display: flex;
     position: relative;
     height: 64px;
 }
 
-.searchForm__input {
+.searchForm__container_input {
     border-radius: 40px;
     width: 100%;
     max-height: 100%;
     border: none;
 }
 
-.searchForm__input_button {
+.searchForm__container_button {
     position: absolute;
     right: 0;
     top: 0;
@@ -46,11 +46,11 @@
     transition: all 0.5s;
 }
 
-.searchForm__input_button:hover {
+.searchForm__container_input_button:hover {
     background-color: #347EFF;
 }
 
-.searchForm__input_button:focus {
+.searchForm__container_input_button:focus {
     background-color: #2A65CC;
 }
 
@@ -68,11 +68,11 @@
         margin: 16px 0 48px;
     }
 
-    .searchForm__input_container {
+    .searchForm__container {
         height: 56px;
     }
 
-    .searchForm__input_button {
+    .searchForm__container_button {
         padding: 0 52px;
     }
 }
@@ -82,17 +82,17 @@
         padding: 30px 16px 32px;
     }
 
-    .searchForm__input_container {
+    .searchForm__container {
         height: auto;
         flex-direction: column;
         gap: 16px;
     }
 
-    .searchForm__input {
+    .searchForm__container_input {
         height: 56px;
     }
 
-    .searchForm__input_button {
+    .searchForm__container_button {
         position: unset;
         height: 56px;
         width: 100%;
@@ -106,7 +106,7 @@
         margin: 16px 0 122px;
     }
 
-    .searchForm__input_container {
+    .searchForm__container {
         flex-direction: column;
         gap: 16px;
     }

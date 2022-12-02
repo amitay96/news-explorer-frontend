@@ -9,9 +9,9 @@ const SearchForm = () => {
         Find the latest news on any topic and save them in your personal
         account.
       </p>
-      <div className="searchForm__input_container">
-        <input className="searchForm__input" />
-        <button className="searchForm__input_button">Search</button>
+      <div className="searchForm__container">
+        <input className="searchForm__container_input" />
+        <button className="searchForm__container_button">Search</button>
       </div>
     </form>
   );
