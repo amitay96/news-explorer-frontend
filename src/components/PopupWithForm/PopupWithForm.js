@@ -27,7 +27,11 @@ function PopupWithForm({
       <form className="form" name={name} action="submit" onSubmit={onSubmit}>
         {children}
         <fieldset className="form__fieldset">
-          <button className="form__button" type="submit">
+          <button
+            className="form__button"
+            aria-label="submit button"
+            type="submit"
+          >
             {buttonText}
           </button>
         </fieldset>

@@ -33,17 +33,17 @@
     margin-top: 9px;
 }
 
-.form__input_type_error {
+.form__input_error {
     visibility: hidden;
     border-bottom: rgba(255, 0, 0, 0.2) 1px solid;
+    font-size: 12px;
+    line-height: 1;
     margin-bottom: 5px;
+    color: #FF0000;
 }
 
 .form__input_error_visible {
     visibility: visible;
-    font-size: 12px;
-    line-height: 1;
-    color: #FF0000;
     margin-bottom: 13px;
 }
 
@@ -94,16 +94,17 @@
 }
 
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 540px) {
     .form {
       width: 100%;
       max-width: none;
       gap: 46px;
     }
-    .form__button {
-        height: 46px;
-        font-size: 14px;
+
+    .popup__title {
+        margin-bottom: 18px;
     }
+
     .form__input {
         height: 26px;
     }

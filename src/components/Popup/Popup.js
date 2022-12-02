@@ -33,8 +33,9 @@ const Popup = ({ isOpen, name, children }) => {
       <div className={`popup__container popup__container_type_${name}`}>
         {children}
         <button
-          className={"popup__close-button"}
+          className={`popup__close-button popup__close-button_type_${name}`}
           type="button"
+          aria-label="popup close button"
           onClick={popupsContext.closeAllPopups}
         />
       </div>
