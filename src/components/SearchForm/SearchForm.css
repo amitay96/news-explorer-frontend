@@ -6,7 +6,7 @@
 }
 
 .searchForm__title {
-    font-family: "Roboto Slab";
+    font-family: "Roboto Slab", Arial, sans-serif;
     font-weight: normal;
     font-size: 60px;
     line-height: 1.07;

@@ -1,8 +1,6 @@
 .newsCardList {
     padding: 64px 0;
     list-style: none;
-    /* display: inline-flex; */
-    /* flex-wrap: wrap; */
     display: grid;
     grid-template-columns: repeat(auto-fit, 400px);
     justify-content: center;
@@ -13,16 +11,16 @@
 
 @media screen and (max-width: 960px) {
     .newsCardList {
-        padding: 32px 0;
+        padding: 32px 40px;
         grid-template-columns: repeat(auto-fit, 224px);
         gap: 8px;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
     .newsCardList {
         padding: 24px 0 16px;
-        grid-template-columns: repeat(auto-fit, 272px);
+        grid-template-columns: repeat(auto-fit, 288px);
         gap: 10px;
     }
 }
