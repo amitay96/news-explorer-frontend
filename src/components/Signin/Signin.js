@@ -1,13 +1,18 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { usePopup } from "../../contexts/PopupContext";
+import { useUser } from "../../contexts/UserContext";
+import { useForm } from "../../utils/hooks/useForm";
 import "./Signin.css";
 
 const Signin = () => {
+  const { values, handleChange } = useForm({ email: "", password: "" });
   const popupContext = usePopup();
+  const { currentUser, loggedIn, handleLogin } = useUser();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    handleLogin();
     popupContext.closeAllPopups();
   };
 
@@ -28,6 +33,8 @@ const Signin = () => {
             name="email"
             className="form__input"
             placeholder="Enter email"
+            value={values.email}
+            onChange={handleChange}
             id="email-input"
             required
           />
@@ -40,6 +47,8 @@ const Signin = () => {
             name="password"
             className="form__input"
             placeholder="Enter password"
+            value={values.password}
+            onChange={handleChange}
             id="password-input"
             required
           />

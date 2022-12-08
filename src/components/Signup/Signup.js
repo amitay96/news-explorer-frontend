@@ -1,10 +1,16 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { usePopup } from "../../contexts/PopupContext";
+import { useForm } from "../../utils/hooks/useForm";
 
 import "./Signup.css";
 
 function Signup({ isOpen, onClose, onSubmit }) {
+  const { values, handleChange } = useForm({
+    email: "",
+    password: "",
+    username: "",
+  });
   const popupContext = usePopup();
 
   const handleSubmit = (evt) => {
@@ -30,7 +36,10 @@ function Signup({ isOpen, onClose, onSubmit }) {
             name="email"
             className="form__input"
             placeholder="Enter email"
+            value={values.email}
+            onChange={handleChange}
             id="signup-email-input"
+            required
           />
           <span
             className="form__input_error"
@@ -44,6 +53,8 @@ function Signup({ isOpen, onClose, onSubmit }) {
             name="password"
             className="form__input"
             placeholder="Enter password"
+            value={values.password}
+            onChange={handleChange}
             id="signup-password-input"
             required
           />
@@ -59,6 +70,8 @@ function Signup({ isOpen, onClose, onSubmit }) {
             name="username"
             className="form__input"
             placeholder="Enter username"
+            value={values.username}
+            onChange={handleChange}
             id="signup-username-input"
             required
           />
