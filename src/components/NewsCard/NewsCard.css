@@ -1,0 +1,167 @@
+.newsCard {
+    position: relative;
+    max-height: 576px;
+    max-width: 400px;
+    border-radius: 16px;
+    background-color: white;
+}
+
+.newsCard__image {
+    width: 100%;
+    height: 272px;
+    display: block;
+    border-radius: 16px 16px 0 0;
+    object-fit: cover;
+}
+
+.newsCard__keyword {
+    background-color: white;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    padding: 8px 22px;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.77;
+}
+
+.newsCard__help {
+    visibility: hidden;
+    opacity: 0;
+    background-color: white;
+    position: absolute;
+    top: 24px;
+    right: 69px;
+    padding: 12px 26px;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    transition: all 0.5s;
+}
+
+.newsCard__button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.newsCard__button:hover+.newsCard__help {
+    visibility: visible;
+    opacity: 1;
+}
+
+.newsCard__button_home {
+    background: #FFF url("../../images/icons/save_icon.svg") center no-repeat;
+}
+
+.newsCard__button_home:hover {
+    background: #FFF url("../../images/icons/save_icon-hover.svg") center no-repeat;
+}
+
+.newsCard__button_saved {
+    background: #FFF url("../../images/icons/delete_icon.svg") center no-repeat;
+}
+
+.newsCard__button_saved:hover {
+    background: #FFF url("../../images/icons/delete_icon-active.svg") center no-repeat;
+}
+
+
+.newsCard__text-container {
+    max-height: 100%;
+    padding: 20px 24px 24px;
+    display: grid;
+    grid-template-rows: 24px 12px 60px 16px 110px 18px 20px;
+    overflow: hidden;
+}
+
+.newsCard__text-container-item {
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.newsCard__date {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    color: #B6BCBF;
+    grid-row: 1;
+}
+
+.newsCard__title {
+    font-family: 'Roboto Slab', Arial, sans-serif;
+    font-size: 26px;
+    line-height: 1.15;
+    grid-row: 3;
+    -webkit-line-clamp: 2;
+}
+
+.newsCard__text {
+    font-size: 16px;
+    line-height: 1.38;
+    grid-row: 5;
+    -webkit-line-clamp: 5;
+}
+
+.newsCard__source {
+    font-family: 'Roboto Slab', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color:#B6BCBF;
+    grid-row: 7;
+    display: block;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 960px) {
+    .newsCard__text-container {
+        padding: 16px;
+        grid-template-rows: 24px 12px 72px 10px 88px 12px 20px;
+    }
+
+    .newsCard__title {
+        font-size: 22px;
+        line-height: 1.09;
+        -webkit-line-clamp: 3;
+    }
+
+    .newsCard__text { 
+        -webkit-line-clamp: 4;
+    }
+
+    .newsCard__image {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .newsCard {
+        height: 440px;
+        max-width: 100%;
+    }
+
+    .newsCard__text-container {
+        grid-template-rows: 24px 10px 48px 14px 88px 8px 20px;
+    }
+
+    .newsCard__title {
+        -webkit-line-clamp: 2;
+    }
+
+    .newsCard__image {
+        height: 196px;
+    }
+}

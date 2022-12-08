@@ -1,0 +1,132 @@
+.navigation {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items : center;
+    gap: 64px;
+}
+
+.navigation__logo {
+    margin: 0;
+    color: #FFF;
+    font-family: 'Roboto Slab', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.navigation__logo_type_saved {
+    color: #000;
+}
+
+.navigation__area {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    height: 100%;
+}
+
+.navigation__links {
+    display: flex;
+    flex-direction: row;
+    gap: 76px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 100%;
+    font-weight: 500;
+}
+
+.navigation__link {
+    text-decoration: none;
+    color:#FFFFFF;
+}
+
+.navigation__link_type_saved {
+    color:#000;
+}
+
+.navigation__link-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.6s;
+    height: 100%;
+}
+
+.navigation__link_home-active {
+    border-bottom: 3px solid #FFFFFF;
+    width: 68px;
+}
+
+.navigation__link_saved-active {
+    border-bottom: 3px solid #000;
+    width: 160px;
+}
+
+.navigation__button {
+    width: 152px;
+    height: max-content;
+    padding: 11px;
+    border: 1px solid #FFF;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #FFF;
+    background: transparent;
+    cursor: pointer;
+}
+
+.navigation__button_type_saved {
+    border-color: #000;
+    color: #000;
+    padding: 11px 15px 11px 19px;
+}
+
+.navigation__user_logout_icon {
+    display: none;
+}
+
+.navigation__user_logout_icon-active {
+    display: block;
+    background: url("../../images/icons/logout_icon_saved.svg") center no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+.navigation__menu_button {
+    display: none;
+    background: transparent;
+    background-position: center;
+    border: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    .navigation__area {
+        gap: 16px;
+    }
+    .navigation__links {
+        gap: 16px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .navigation__area {
+        display: none;
+    }
+
+
+    .navigation__menu_button {
+        display: block;
+    }
+}

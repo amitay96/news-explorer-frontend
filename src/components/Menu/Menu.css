@@ -1,0 +1,82 @@
+.menu {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.45s ease-in-out;
+}
+
+.menu_active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__container {
+    background-color: #1A1B22;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.menu__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+}
+
+.menu__close-button {
+    width: 24px;
+    height: 24px;
+    background: url('../../images/icons/close_icon.svg') center no-repeat;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+.menu__nav {
+    padding: 16px 16px 24px;
+}
+
+.menu__nav-list {
+    padding: 0;
+    margin: 0 0 22px;
+    list-style: none;
+}
+
+.menu__link {
+    color: white;
+    text-decoration: none;
+    line-height: 3.11;
+}
+
+.menu__link_active {
+    color: rgb(108, 179, 67);
+}
+
+.menu__button {
+    background-color: transparent;
+    color: white;
+    border: white 1px solid;
+    width: 100%;
+    padding: 16px 0;
+    box-sizing: border-box;
+    font-weight: 500;
+    border-radius: 100px;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu__icon {
+    width: 17px;
+    height: 17px;
+}
