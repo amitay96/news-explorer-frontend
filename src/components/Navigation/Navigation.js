@@ -97,7 +97,7 @@ const Navigation = ({ isMain }) => {
         </button>
       </div>
       <button
-        className="menu_button"
+        className="navigation__menu_button"
         onClick={handleMenuClick}
         style={{ backgroundImage: `url(${isMain ? menuIcon : menuIconSaved})` }}
       />

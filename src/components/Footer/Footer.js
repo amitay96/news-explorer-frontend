@@ -25,8 +25,8 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-        <ul className="footer__links footer__social_links">
-          <li className="footer__social_link">
+        <ul className="footer__links footer__links_social">
+          <li className="footer__link_social">
             <a
               href="https://github.com/amitay96/"
               className="footer__link"
@@ -35,12 +35,12 @@ const Footer = () => {
             >
               <img
                 src={ghIcon}
-                className="footer__social_link"
+                className="footer__link_social"
                 alt="github link"
               />
             </a>
           </li>
-          <li className="footer__social_link">
+          <li className="footer__link_social">
             <a
               href="https://www.facebook.com/Amitay96/"
               className="footer__link"
@@ -49,7 +49,7 @@ const Footer = () => {
             >
               <img
                 src={fbIcon}
-                className="footer__social_link"
+                className="footer__link_social"
                 alt="facebook link"
               />
             </a>

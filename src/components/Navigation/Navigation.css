@@ -101,7 +101,7 @@
     height: 24px;
 }
 
-.menu_button {
+.navigation__menu_button {
     display: none;
     background: transparent;
     background-position: center;
@@ -126,7 +126,7 @@
     }
 
 
-    .menu_button {
+    .navigation__menu_button {
         display: block;
     }
 }

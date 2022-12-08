@@ -5,7 +5,7 @@
   grid-template-columns: minmax(232px, max-content) minmax(288px, max-content);
 }
 
-.about__info {
+.about__info-container {
   max-width: 600px;
 }
 
@@ -36,7 +36,7 @@
     max-height: 232px;
   }
 
-  .about__info {
+  .about__info-container {
     max-width: 424px;
     max-height: 424px;
     width: 100%;
@@ -64,7 +64,7 @@
     max-height: 350px;
   }
 
-  .about__info {
+  .about__info-container {
     max-width: 464px;
     max-height: 464px;
     width: 100%;

@@ -31,6 +31,10 @@
     margin: 0;
 }
 
+.footer__links_social {
+    gap: 24px;
+}
+
 .footer__link {
     cursor: pointer;
     display: block;
@@ -38,21 +42,17 @@
     color: #000;
 }
 
-.footer__social_links {
-    gap: 24px;
-}
-
-.footer__social_link {
+.footer__link_social {
     cursor: pointer;
     width: 24px;
     height: 24px;
 }
 
-.footer__social_link-github {
+.footer__link_social-github {
     background: url('../../images/icons/github_icon.svg') center no-repeat;
 }
 
-.footer__social_link-facebook {
+.footer__link_social-facebook {
     background: url('../../images/icons/fb_icon.svg') center no-repeat;
 }
 
@@ -75,7 +75,7 @@
         gap: 40px;
     }
 
-    .footer__social_links {
+    .footer__links_social {
         flex-direction: row;
     }
 }

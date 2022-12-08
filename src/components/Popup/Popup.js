@@ -28,7 +28,7 @@ const Popup = ({ isOpen, name, children }) => {
 
   return (
     <div
-      className={`popup popup__type_${name} ${isOpen ? "popup__active" : ""}`}
+      className={`popup popup_type_${name} ${isOpen ? "popup__active" : ""}`}
     >
       <div className={`popup__container popup__container_type_${name}`}>
         {children}
