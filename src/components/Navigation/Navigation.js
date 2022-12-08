@@ -20,7 +20,6 @@ const Navigation = ({ isMain }) => {
 
   return (
     <nav
-      onClick={() => console.log(currentUser)}
       className={isMain ? "navigation" : "navigation saved__header_container"}
     >
       <p
