@@ -6,16 +6,19 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import LocationContext from "./contexts/LocationContext";
 import PopupContext from "./contexts/PopupContext";
+import UserContext from "./contexts/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <PopupContext>
-        <LocationContext>
-          <App />
-        </LocationContext>
-      </PopupContext>
+      <UserContext>
+        <PopupContext>
+          <LocationContext>
+            <App />
+          </LocationContext>
+        </PopupContext>
+      </UserContext>
     </BrowserRouter>
   </React.StrictMode>
 );
