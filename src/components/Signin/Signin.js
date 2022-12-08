@@ -8,11 +8,11 @@ import "./Signin.css";
 const Signin = () => {
   const { values, handleChange } = useForm({ email: "", password: "" });
   const popupContext = usePopup();
-  const { currentUser, loggedIn, handleLogin } = useUser();
+  const { handleLogin, isLoading } = useUser();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    handleLogin();
+    handleLogin(values);
     popupContext.closeAllPopups();
   };
 
@@ -20,7 +20,7 @@ const Signin = () => {
     <PopupWithForm
       name="signin"
       title="Sign in"
-      buttonText="Login"
+      buttonText={isLoading ? "Logging in..." : "Login"}
       redirectText="Sign up"
       isOpen={popupContext.popupStates.signin}
       onSubmit={handleSubmit}

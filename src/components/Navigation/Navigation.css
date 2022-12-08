@@ -87,18 +87,18 @@
 .navigation__button_type_saved {
     border-color: #000;
     color: #000;
-    padding: 11px 15px 11px 19px;
+    /* padding: 11px 15px 11px 19px; */
 }
 
-.navigation__user_logout_icon {
-    display: none;
-}
-
-.navigation__user_logout_icon-active {
+.navigation__button_logout_icon {
     display: block;
-    background: url("../../images/icons/logout_icon_saved.svg") center no-repeat;
+    background: url("../../images/icons/logout_icon.svg") center no-repeat;
     width: 24px;
     height: 24px;
+}
+
+.navigation__button_logout_icon_saved {
+    background: url("../../images/icons/logout_icon_saved.svg") center no-repeat;
 }
 
 .navigation__menu_button {

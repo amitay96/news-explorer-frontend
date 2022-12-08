@@ -1,20 +1,23 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { usePopup } from "../../contexts/PopupContext";
+import { useUser } from "../../contexts/UserContext";
 import { useForm } from "../../utils/hooks/useForm";
-
 import "./Signup.css";
 
-function Signup({ isOpen, onClose, onSubmit }) {
+const Signup = () => {
   const { values, handleChange } = useForm({
     email: "",
     password: "",
     username: "",
   });
   const popupContext = usePopup();
+  const { handleRegister, isLoading } = useUser();
 
   const handleSubmit = (evt) => {
+    const { email, password, username } = values;
     evt.preventDefault();
+    handleRegister({ email, password, name: username });
     popupContext.closeAllPopups();
     popupContext.openPopup("registered");
   };
@@ -23,7 +26,7 @@ function Signup({ isOpen, onClose, onSubmit }) {
     <PopupWithForm
       name="signup"
       title="Sign up"
-      buttonText="Sign up"
+      buttonText={isLoading ? "Signing in..." : "Sign up"}
       redirectText="Sign in"
       isOpen={popupContext.popupStates.signup}
       onSubmit={handleSubmit}
@@ -84,6 +87,6 @@ function Signup({ isOpen, onClose, onSubmit }) {
       </fieldset>
     </PopupWithForm>
   );
-}
+};
 
 export default Signup;
