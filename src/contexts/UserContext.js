@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../utils/MainApi";
 
@@ -9,6 +9,26 @@ const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({ username: "" });
   const [loggedIn, setLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem("jwt"));
+
+  useEffect(() => {
+    if (token) {
+      setIsLoading(true);
+      api
+        .checkToken(token)
+        .then((res) => {
+          if (res._id) {
+            setLoggedIn(true);
+            setCurrentUser({ username: res.name });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          history("/");
+        })
+        .finally(() => setIsLoading(false));
+    }
+  }, [loggedIn]);
 
   const handleLogin = (data) => {
     setIsLoading(true);
@@ -44,7 +64,7 @@ const UserProvider = ({ children }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("jwt");
-    setCurrentUser({});
+    setCurrentUser({ username: "" });
     setLoggedIn(false);
     history("/");
   };
