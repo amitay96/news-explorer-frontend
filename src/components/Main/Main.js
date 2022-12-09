@@ -12,7 +12,7 @@ const Main = (props) => {
     <section className="Main">
       <Header />
       <SearchForm />
-      <SearchResults />
+      {/* <SearchResults /> */}
       {/* <Preloader /> */}
       {/* <NotFound /> */}
       <About />
