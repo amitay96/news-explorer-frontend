@@ -1,15 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Popup from "../Popup/Popup";
 import { usePopup } from "../../contexts/PopupContext";
-import { Link } from "react-router-dom";
+import { useUser } from "../../contexts/UserContext";
+import logoutIcon from "../../images/icons/logout_icon.svg";
 import "./Menu.css";
 
 const Menu = () => {
   const { popupStates, openPopup, closeAllPopups } = usePopup();
+  const { currentUser, loggedIn, handleLogout } = useUser();
+
   const { menu } = popupStates;
 
   const handleLoginClick = () => {
-    openPopup("signin");
+    closeAllPopups();
+    loggedIn ? handleLogout() : openPopup("signin");
   };
 
   return (
@@ -33,28 +38,29 @@ const Menu = () => {
             <Link
               to="/"
               className={!menu ? "menu__link" : "menu__link menu__link_active"}
+              onClick={closeAllPopups}
             >
               Home
             </Link>
           </li>
-          {/* {loggedIn && (
-              <li className="menu__list-item">
-                <Link
-                  to="/saved-news"
-                  className="menu__link"
-                  activeClassName="menu__link_active"
-                >
-                  Saved articles
-                </Link>
-              </li>
-            )} */}
+          {loggedIn && (
+            <li className="menu__list-item">
+              <Link
+                to="/saved-news"
+                className="menu__link"
+                onClick={closeAllPopups}
+              >
+                Saved articles
+              </Link>
+            </li>
+          )}
         </ul>
 
         <button className="menu__button" onClick={handleLoginClick}>
-          Sign in
-          {/* {loggedIn && (
-              <img className="menu__icon" src={logoutIcon} alt="logout" />
-            )} */}
+          {!loggedIn ? "Sign in" : currentUser.username}
+          {loggedIn && (
+            <img className="menu__icon" src={logoutIcon} alt="logout" />
+          )}
         </button>
       </nav>
     </Popup>
