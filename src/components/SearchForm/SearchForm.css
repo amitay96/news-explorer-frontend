@@ -1,8 +1,8 @@
 .searchForm {
-    /* padding: 80px 0; */
+    padding: 80px 0;
     color: #FFF;
     max-width: 608px;
-    margin: 80px auto;
+    margin: 0 auto;
 }
 
 .searchForm__title {
@@ -57,6 +57,7 @@
 @media screen and (max-width: 900px) {
     .searchForm {
         padding: 38px 0 48px;
+        max-width: 452px;
     }
 
     .searchForm__title {
@@ -78,9 +79,7 @@
 }
 
 @media screen and (max-width: 620px) {
-    .searchForm {
-        padding: 30px 16px 32px;
-    }
+    
 
     .searchForm__search-container {
         height: auto;
@@ -102,6 +101,10 @@
 }
 
 @media screen and (max-width: 480px) {
+    .searchForm {
+        padding: 30px 16px 32px;
+    }
+    
     .searchForm__subtitle {
         margin: 16px 0 122px;
     }
