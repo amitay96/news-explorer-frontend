@@ -1,8 +1,8 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { usePopup } from "../../contexts/PopupContext";
-import { useUser } from "../../contexts/UserContext";
-import { useForm } from "../../utils/hooks/useForm";
+import { useStore } from "../../contexts/GlobalContext";
+import { useForm } from "../../utils/useForm";
 import "./Signup.css";
 
 const Signup = () => {
@@ -12,7 +12,7 @@ const Signup = () => {
     username: "",
   });
   const popupContext = usePopup();
-  const { handleRegister, isLoading } = useUser();
+  const { handleRegister, isLoading } = useStore();
 
   const handleSubmit = (evt) => {
     const { email, password, username } = values;

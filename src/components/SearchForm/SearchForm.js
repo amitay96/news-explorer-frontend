@@ -1,16 +1,20 @@
 import React from "react";
-import { useForm } from "../../utils/hooks/useForm";
-import { useNews } from "../../contexts/NewsContext";
+import { useForm } from "../../utils/useForm";
+import { useNews } from "../../contexts/hooks/useNews";
 import "./SearchForm.css";
 
 const SearchForm = () => {
   const { values, handleChange } = useForm({ keyword: "" });
-  // const { loadNews } = useNews();
+  const { loadNews } = useNews();
 
   const handleTyping = (evt) => {
     evt.preventDefault();
-    handleChange();
-    // loadNews(values.keyword);
+    handleChange(evt);
+    console.log(values);
+    setTimeout(() => {
+      loadNews(values.keyword);
+    }, 300);
+    console.log(values);
   };
 
   return (

@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { usePopup } from "../../contexts/PopupContext";
-import { useUser } from "../../contexts/UserContext";
+import { useStore } from "../../contexts/GlobalContext";
 import menuIcon from "../../images/icons/menu_icon.svg";
 import menuIconSaved from "../../images/icons/menu_icon_saved.svg";
 import "./Navigation.css";
 
 const Navigation = ({ isMain }) => {
   const { openPopup } = usePopup();
-  const { currentUser, loggedIn, handleLogout } = useUser();
+  const { currentUser, loggedIn, handleLogout } = useStore();
 
   const handleNavButtonClick = () => {
     loggedIn ? handleLogout() : openPopup("signin");

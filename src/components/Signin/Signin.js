@@ -1,14 +1,14 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { usePopup } from "../../contexts/PopupContext";
-import { useUser } from "../../contexts/UserContext";
-import { useForm } from "../../utils/hooks/useForm";
+import { useStore } from "../../contexts/GlobalContext";
+import { useForm } from "../../utils/useForm";
 import "./Signin.css";
 
 const Signin = () => {
   const { values, handleChange } = useForm({ email: "", password: "" });
   const popupContext = usePopup();
-  const { handleLogin, isLoading } = useUser();
+  const { handleLogin, isLoading } = useStore();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();

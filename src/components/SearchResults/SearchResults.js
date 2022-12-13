@@ -1,5 +1,5 @@
 import React from "react";
-import { useNews } from "../../contexts/NewsContext";
+import { useNews } from "../../contexts/GlobalContext";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import "./SearchResults.css";
 

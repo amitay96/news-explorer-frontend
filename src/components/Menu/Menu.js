@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Popup from "../Popup/Popup";
 import { usePopup } from "../../contexts/PopupContext";
-import { useUser } from "../../contexts/UserContext";
+import { useStore } from "../../contexts/GlobalContext";
 import logoutIcon from "../../images/icons/logout_icon.svg";
 import "./Menu.css";
 
 const Menu = () => {
   const { popupStates, openPopup, closeAllPopups } = usePopup();
-  const { currentUser, loggedIn, handleLogout } = useUser();
+  const { currentUser, loggedIn, handleLogout } = useStore();
 
   const { menu } = popupStates;
 
