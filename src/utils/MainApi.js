@@ -8,7 +8,7 @@ class Api {
     return res.ok ? res.json() : Promise.reject(res.statusText);
   }
 
-  _request(url, headers) {
+  async _request(url, headers) {
     return fetch(url, headers).then(this._checkResponse);
   }
 
@@ -76,8 +76,8 @@ class Api {
     });
   }
 
-  deleteArticle(cardId, token) {
-    return this._request(`${this._baseUrl}/articles/${cardId}`, {
+  deleteArticle(articleId, token) {
+    return this._request(`${this._baseUrl}/articles/${articleId}`, {
       headers: {
         ...this._headers,
         authorization: `Bearer ${token}`,
@@ -94,7 +94,7 @@ let base_url =
     ? "https://api.amitay.students.nomoredomainssbs.ru"
     : "http://localhost:3000";
 
-const api = new Api({
+const UserApi = new Api({
   baseUrl: base_url,
   headers: {
     Accept: "application/json",
@@ -102,4 +102,4 @@ const api = new Api({
   },
 });
 
-export default api;
+export default UserApi;
