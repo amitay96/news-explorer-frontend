@@ -8,7 +8,7 @@ import "./Navigation.css";
 
 const Navigation = ({ isMain }) => {
   const { openPopup } = usePopup();
-  const { currentUser, loggedIn, handleLogout } = useStore();
+  const { currentUser, loggedIn, handleLogout } = useStore().UserActions;
 
   const handleNavButtonClick = () => {
     loggedIn ? handleLogout() : openPopup("signin");

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import UserApi from "../../utils/MainApi";
 
@@ -7,13 +7,15 @@ export const useUser = () => {
   const [currentUser, setCurrentUser] = useState({ username: "" });
   const [loggedIn, setLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [token, setToken] = useState(localStorage.getItem("jwt"));
+  // const [token, setToken] = useState(localStorage.getItem("jwt"));
 
   useEffect(() => {
+    const token = localStorage.getItem("jwt");
     if (token) {
       setIsLoading(true);
       UserApi.checkToken(token)
         .then((res) => {
+          console.log(res);
           if (res._id) {
             setLoggedIn(true);
             setCurrentUser({ username: res.name });
@@ -25,15 +27,32 @@ export const useUser = () => {
         })
         .finally(() => setIsLoading(false));
     }
-  }, [loggedIn]);
+  }, [history]);
+
+  const checkToken = async () => {
+    try {
+      const token = localStorage.getItem("jwt");
+      setIsLoading(true);
+      if (token) {
+        const user = await UserApi.checkToken(token);
+        setCurrentUser(user);
+        return user;
+      } else {
+        handleLogout();
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleLogin = (data) => {
     setIsLoading(true);
     UserApi.login(data)
       .then((res) => {
         if (res) {
+          console.log(res);
           localStorage.setItem("jwt", res.token);
-          setCurrentUser({ username: res.user.name });
+          setCurrentUser({ username: res.data.name });
           setLoggedIn(true);
         }
       })

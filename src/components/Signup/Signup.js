@@ -12,7 +12,7 @@ const Signup = () => {
     username: "",
   });
   const popupContext = usePopup();
-  const { handleRegister, isLoading } = useStore();
+  const { handleRegister, isLoading } = useStore().UserActions;
 
   const handleSubmit = (evt) => {
     const { email, password, username } = values;

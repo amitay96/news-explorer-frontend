@@ -8,7 +8,7 @@ import "./Signin.css";
 const Signin = () => {
   const { values, handleChange } = useForm({ email: "", password: "" });
   const popupContext = usePopup();
-  const { handleLogin, isLoading } = useStore();
+  const { handleLogin, isLoading } = useStore().UserActions;
 
   const handleSubmit = (evt) => {
     evt.preventDefault();

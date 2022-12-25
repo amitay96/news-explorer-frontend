@@ -5,17 +5,18 @@ import "./SearchForm.css";
 
 const SearchForm = () => {
   const { values, handleChange } = useForm({ keyword: "" });
-  const { loadNews } = useNews();
-
+  const { searchNews } = useNews();
+  console.log(values);
   const handleTyping = (evt) => {
     evt.preventDefault();
     handleChange(evt);
     console.log(values);
     setTimeout(() => {
-      loadNews(values.keyword);
+      searchNews(values.keyword);
     }, 300);
     console.log(values);
   };
+  console.log(values);
 
   return (
     <form className="searchForm">

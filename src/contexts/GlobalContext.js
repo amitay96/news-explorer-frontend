@@ -5,9 +5,9 @@ import { useUser } from "./hooks/useUser";
 const GlobalContext = createContext();
 
 export const StoreProvider = ({ children }) => {
-  const User = useUser();
-  const News = useNews();
-  const store = { User, News };
+  const UserActions = useUser();
+  const NewsActions = useNews();
+  const store = { UserActions, NewsActions };
 
   return (
     <GlobalContext.Provider value={store}>{children}</GlobalContext.Provider>

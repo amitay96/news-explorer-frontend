@@ -8,7 +8,7 @@ import "./Menu.css";
 
 const Menu = () => {
   const { popupStates, openPopup, closeAllPopups } = usePopup();
-  const { currentUser, loggedIn, handleLogout } = useStore();
+  const { currentUser, loggedIn, handleLogout } = useStore().UserActions;
 
   const { menu } = popupStates;
 

@@ -94,10 +94,10 @@
 }
 
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 480px) {
     .form {
       width: 100%;
-      max-width: none;
+      max-width: 100%;
       gap: 46px;
     }
 

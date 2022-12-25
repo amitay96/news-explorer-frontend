@@ -8,7 +8,7 @@ class Api {
     return res.ok ? res.json() : Promise.reject(res.statusText);
   }
 
-  async _request(url, headers) {
+  _request(url, headers) {
     return fetch(url, headers).then(this._checkResponse);
   }
 
@@ -90,8 +90,8 @@ class Api {
 let node_env = "production";
 
 let base_url =
-  !node_env === "production"
-    ? "https://api.amitay.students.nomoredomainssbs.ru"
+  node_env === "production"
+    ? "https://api.amitaynews.students.nomoredomainssbs.ru"
     : "http://localhost:3000";
 
 const UserApi = new Api({
