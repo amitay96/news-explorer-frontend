@@ -2,7 +2,7 @@ import { useState } from "react";
 import newsApi from "../../utils/NewsApi";
 
 export const useNews = () => {
-  const [news, setNews] = useState();
+  const [news, setNews] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [isFound, setIsFound] = useState(false);
 
