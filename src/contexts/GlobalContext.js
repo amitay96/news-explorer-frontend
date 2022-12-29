@@ -1,6 +1,6 @@
 import React, { useState, createContext, useContext } from "react";
-import { useNews } from "./hooks/useNews";
-import { useUser } from "./hooks/useUser";
+import { useNews } from "./entities/useNews";
+import { useUser } from "./entities/useUser";
 
 const GlobalContext = createContext();
 

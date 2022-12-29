@@ -1,12 +1,11 @@
 import React from "react";
 import { useForm } from "../../utils/useForm";
-import { useNews } from "../../contexts/hooks/useNews";
+import { useStore } from "../../contexts/GlobalContext";
 import "./SearchForm.css";
 
 const SearchForm = () => {
   const { values, handleChange } = useForm({ keyword: "" });
-  const { searchNews } = useNews();
-  console.log(values);
+  const { searchNews } = useStore().NewsActions;
 
   // const handleInput = (evt) => {
   //   evt.preventDefault();
@@ -16,10 +15,9 @@ const SearchForm = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    setTimeout(() => {
-      searchNews(values.keyword);
-    }, 300);
-    console.log(values);
+    searchNews(values.keyword);
+    // setTimeout(() => {
+    // }, 300);
   };
 
   return (

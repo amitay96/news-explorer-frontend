@@ -2,6 +2,7 @@ class NewsApi {
   constructor({ baseUrl, apiKey }) {
     this._baseUrl = baseUrl;
     this._apiKey = apiKey;
+    this._time = new Date();
   }
 
   _checkResponse(res) {
@@ -9,9 +10,19 @@ class NewsApi {
     return res.ok ? res.json() : Promise.reject(res.statusText);
   }
 
+  _getLastWeek() {
+    return new Date(
+      this._time.getFullYear(),
+      this._time.getMonth(),
+      this._time.getDay() - 7
+    );
+  }
+
   getNews(keyword) {
+    const lastWeek = this._getLastWeek();
+    console.log(lastWeek);
     return fetch(
-      `${this._baseUrl}${keyword}&apiKey=${this._apiKey}`
+      `${this._baseUrl}${keyword}&from=${lastWeek}&to=${this._time}&apiKey=${this._apiKey}`
     ).then((res) => this._checkResponse(res));
   }
 }
