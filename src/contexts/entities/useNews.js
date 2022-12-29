@@ -6,8 +6,13 @@ export const useNews = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [isFound, setIsFound] = useState(false);
 
-  const searchNews = (keyword) => {
+  const _setIsLoading = () => {
     setIsSearching(true);
+    setNews([]);
+  };
+
+  const searchNews = (keyword) => {
+    _setIsLoading();
     newsApi
       .getNews(keyword)
       .then((res) => {
@@ -24,9 +29,11 @@ export const useNews = () => {
       .finally(() => setIsSearching(false));
   };
 
-  const checkFound = () => {
-    if (!isSearching && isFound) return true;
-  };
+  console.log(isFound);
 
-  return { news, searchNews, checkFound, isSearching, isFound };
+  // const checkFound = () => {
+  //   return !isSearching && isFound;
+  // };
+
+  return { news, searchNews, isSearching, isFound };
 };
