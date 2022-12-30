@@ -1,24 +1,18 @@
 import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
-import { useStore } from "../../contexts/GlobalContext";
-
 import "./NewsCardList.css";
 
-const NewsCardList = () => {
-  const { news, isSearching, isFound } = useStore().NewsActions;
-
+const NewsCardList = ({ news }) => {
   return (
-    <>
-      <ul className="newsCardList">
-        {news.map((card, index) => {
-          return (
-            <li key={index}>
-              <NewsCard image={card.urlToImage} newsCard={card} />
-            </li>
-          );
-        })}
-      </ul>
-    </>
+    <ul className="newsCardList">
+      {news.map((card, index) => {
+        return (
+          <li key={index}>
+            <NewsCard newsCard={card} />
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

@@ -4,36 +4,30 @@ import newsApi from "../../utils/NewsApi";
 export const useNews = () => {
   const [news, setNews] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-  const [isFound, setIsFound] = useState(false);
+  const [isNotFound, setIsNotFound] = useState(false);
 
-  const _setIsLoading = () => {
+  const _setIsSearching = () => {
     setIsSearching(true);
+    setIsNotFound(false);
     setNews([]);
   };
 
   const searchNews = (keyword) => {
-    _setIsLoading();
+    _setIsSearching();
     newsApi
       .getNews(keyword)
       .then((res) => {
         if (res.articles) {
           console.log(res);
           setNews(res.articles);
-          setIsFound(true);
         }
       })
       .catch((err) => {
-        console.log(err);
-        setIsFound(false);
+        console.log("Error:", err);
+        setIsNotFound(true);
       })
       .finally(() => setIsSearching(false));
   };
 
-  console.log(isFound);
-
-  // const checkFound = () => {
-  //   return !isSearching && isFound;
-  // };
-
-  return { news, searchNews, isSearching, isFound };
+  return { news, searchNews, isSearching, isNotFound };
 };
