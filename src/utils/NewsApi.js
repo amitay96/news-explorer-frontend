@@ -20,7 +20,7 @@ class NewsApi {
   getNews(keyword) {
     const lastWeek = this._getLastWeek();
     return fetch(
-      `${this._baseUrl}${keyword}&from=${lastWeek}&to=${this._time}&apiKey=${this._apiKey}`
+      `${this._baseUrl}${keyword}&from=${lastWeek}&to=${this._time}&pageSize=100&apiKey=${this._apiKey}`
     ).then((res) => this._checkResponse(res));
   }
 }
