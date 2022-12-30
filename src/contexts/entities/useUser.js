@@ -87,6 +87,7 @@ export const useUser = () => {
       })
       .catch((err) => {
         console.log(err);
+        setSavedArticles([])
       });
   };
 
