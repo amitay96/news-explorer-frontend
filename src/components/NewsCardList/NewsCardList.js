@@ -8,7 +8,14 @@ const NewsCardList = ({ news }) => {
       {news.map((card, index) => {
         return (
           <li key={index}>
-            <NewsCard newsCard={card} />
+            <NewsCard
+              title={card.title}
+              text={card.content || card.text}
+              date={card.publishedAt|| card.date}
+              image={card.urlToImage || card.image}
+              source={card.source.name}
+              currentCard={card}
+            />
           </li>
         );
       })}
