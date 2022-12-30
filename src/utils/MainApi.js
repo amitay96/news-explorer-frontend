@@ -87,7 +87,7 @@ class Api {
   }
 }
 
-let node_env = "Dproduction";
+let node_env = "production";
 
 let base_url =
   node_env === "production"
