@@ -75,6 +75,9 @@
     background: #FFF url("../../images/icons/delete_icon-active.svg") center no-repeat;
 }
 
+.newsCard__button_home-active {
+    background: #FFF url("../../images/icons/save_icon-active.svg") center no-repeat;
+}
 
 .newsCard__text-container {
     max-height: 100%;
