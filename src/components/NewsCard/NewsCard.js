@@ -5,6 +5,17 @@ import "./NewsCard.css";
 const NewsCard = (props) => {
   const { isMain } = useLocations();
 
+  const options = {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  };
+
+  const shortDate = new Date(props.newsCard.publishedAt).toLocaleDateString(
+    "en-US",
+    options
+  );
+
   return (
     <article className="newsCard">
       {!isMain && <p className="newsCard__keyword">{props.newsCard.keyword}</p>}
@@ -27,7 +38,7 @@ const NewsCard = (props) => {
       />
       <div className="newsCard__text-container">
         <p className="newsCard__date newsCard__text-container-item">
-          {props.newsCard.publishedAt}
+          {shortDate}
         </p>
         <h2 className="newsCard__title newsCard__text-container-item">
           {props.newsCard.title}
