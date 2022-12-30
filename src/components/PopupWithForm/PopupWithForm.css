@@ -34,17 +34,10 @@
 }
 
 .form__input_error {
-    visibility: hidden;
-    border-bottom: rgba(255, 0, 0, 0.2) 1px solid;
     font-size: 12px;
     line-height: 1;
     margin-bottom: 5px;
     color: #FF0000;
-}
-
-.form__input_error_visible {
-    visibility: visible;
-    margin-bottom: 13px;
 }
 
 .form__button {
