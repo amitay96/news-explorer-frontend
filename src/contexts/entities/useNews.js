@@ -17,10 +17,10 @@ export const useNews = () => {
     newsApi
       .getNews(keyword)
       .then((res) => {
-        if (res.articles) {
-          console.log(res);
+        console.log(res);
+        if (res.articles.length > 0) {
           setNews(res.articles);
-        }
+        } else setIsNotFound(true);
       })
       .catch((err) => {
         console.log("Error:", err);

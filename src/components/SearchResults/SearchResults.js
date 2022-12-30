@@ -13,7 +13,7 @@ const SearchResults = () => {
   return (
     <>
       {isSearching && <Preloader />}
-      {news.length > 1 && (
+      {news.length > 0 && (
         <section className="section search-results">
           <h3 className="search-results__title">Search results</h3>
           <NewsCardList news={news.slice(0, newsToShow)} />
