@@ -6,22 +6,23 @@ import { useFormWithValidation } from "../../utils/hooks";
 import "./Signup.css";
 
 const Signup = () => {
-  const { values, handleChange, errors, isValid } = useFormWithValidation();
+  const {
+    values,
+    handleChange,
+    resetForm,
+    errors,
+    isValid,
+  } = useFormWithValidation();
   const popupContext = usePopup();
   const { handleRegister, isLoading } = useStore().UserActions;
   const [formError, setFormError] = useState({ isError: false, message: "" });
 
-  const handleSubmit = async (evt) => {
-    evt.preventDefault();
+  const handleSubmit = (evt) => {
     const { email, password, username } = values;
-    const res = await handleRegister({ email, password, name: username });
-    if (!res.message) {
-      popupContext.closeAllPopups();
-      popupContext.openPopup("registered");
-      return;
-    }
-    setFormError({ isError: true, message: res.message });
-    setTimeout(() => setFormError({ isError: false, message: "" }), 1500);
+    evt.preventDefault();
+    handleRegister({ email, password, name: username });
+    popupContext.closeAllPopups();
+    popupContext.openPopup("registered");
   };
 
   return (

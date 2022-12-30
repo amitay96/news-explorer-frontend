@@ -8,49 +8,52 @@ export const useUser = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect(() => checkToken(), [loggedIn]);
-
-  const checkToken = async () => {
-    try {
-      const token = localStorage.getItem("jwt");
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
       setIsLoading(true);
-      if (token) {
-        const user = await UserApi.checkToken(token);
-        setCurrentUser(user);
-        return user;
-      } else {
-        handleLogout();
-      }
-    } catch (err) {
-      console.log(err);
+      UserApi.checkToken(token)
+        .then((user) => {
+          if (user._id) {
+            setLoggedIn(true);
+            setCurrentUser({ username: user.name });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => setIsLoading(false));
     }
+  }, [history]);
+
+  const handleLogin = (data) => {
+    setIsLoading(true);
+    UserApi.login(data)
+      .then((res) => {
+        if (res) {
+          localStorage.setItem("jwt", res.token);
+          setCurrentUser({ username: res.user.name });
+          setLoggedIn(true);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => setIsLoading(false));
   };
 
-  const handleLogin = async (data) => {
+  const handleRegister = (data) => {
     setIsLoading(true);
-    try {
-      const user = await UserApi.login(data);
-      localStorage.setItem("jwt", user.token);
-      setCurrentUser({ username: user.data.name });
-      setLoggedIn(true);
-      return user;
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleRegister = async (data) => {
-    setIsLoading(true);
-    try {
-      const user = await UserApi.register(data);
-      return user;
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setIsLoading(false);
-    }
+    UserApi.register(data)
+      .then((res) => {
+        if (res) {
+          console.log(res);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const handleLogout = () => {

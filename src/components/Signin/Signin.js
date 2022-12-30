@@ -21,9 +21,9 @@ const Signin = () => {
       name="signin"
       title="Sign in"
       buttonText={isLoading ? "Logging in..." : "Login"}
+      isButtonValid={isValid}
       redirectText="Sign up"
       isOpen={popupContext.popupStates.signin}
-      isButtonValid={isValid}
       onSubmit={handleSubmit}
     >
       <fieldset className="form__fieldset">

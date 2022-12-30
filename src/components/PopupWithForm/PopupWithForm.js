@@ -32,7 +32,7 @@ function PopupWithForm({
               "form__button_disabled"}`}
             aria-label="submit button"
             type="submit"
-            disabled={isButtonValid}
+            disabled={!isButtonValid}
           >
             {buttonText}
           </button>
