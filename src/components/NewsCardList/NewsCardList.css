@@ -5,7 +5,6 @@
     grid-template-columns: repeat(auto-fit, 400px);
     justify-content: center;
     gap: 16px;
-    margin: 0;
     background-color: #F5F6F7;
 }
 
