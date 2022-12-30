@@ -49,6 +49,7 @@ const Signin = () => {
             name="password"
             className="form__input"
             placeholder="Enter password"
+            minLength="8"
             value={values.password || ""}
             onChange={handleChange}
             required
