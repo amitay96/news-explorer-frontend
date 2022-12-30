@@ -8,14 +8,14 @@ const SavedNews = () => {
   const { currentUser, savedArticles, handleGetSaved } = useStore().UserActions;
   const [keywords, setKeywords] = useState([]);
 
-  // useEffect(() => {
-  //   handleGetSaved();
-  // }, []);
+  useEffect(() => {
+    handleGetSaved();
+  }, []);
 
-  // useEffect(() => {
-  //   const newArr = savedArticles.map((card) => card.keyword);
-  //   setKeywords([...new Set(newArr)]);
-  // }, [savedArticles]);
+  useEffect(() => {
+    const newArr = savedArticles.map((card) => card.keyword);
+    setKeywords([...new Set(newArr)]);
+  }, [savedArticles]);
 
   return (
     <>
@@ -31,7 +31,7 @@ const SavedNews = () => {
             By keywords: {""}
             {keywords.slice(0, 2).map((word, index) => {
               return (
-                <span className="savedNews__keywords_bold">
+                <span className="savedNews__keywords_bold" key={index}>
                   {word}
                   {index + 1 < keywords.length && ","}{" "}
                 </span>
