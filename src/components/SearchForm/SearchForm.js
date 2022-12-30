@@ -1,10 +1,10 @@
 import React from "react";
-import { useForm } from "../../utils/useForm";
+import { useFormWithValidation } from "../../utils/hooks";
 import { useStore } from "../../contexts/GlobalContext";
 import "./SearchForm.css";
 
 const SearchForm = () => {
-  const { values, handleChange } = useForm({ keyword: "" });
+  const { values, handleChange } = useFormWithValidation({ keyword: "" });
   const { searchNews } = useStore().NewsActions;
 
   const handleSubmit = (evt) => {

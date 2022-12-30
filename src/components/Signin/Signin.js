@@ -2,11 +2,11 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { usePopup } from "../../contexts/PopupContext";
 import { useStore } from "../../contexts/GlobalContext";
-import { useForm } from "../../utils/useForm";
+import { useFormWithValidation } from "../../utils/hooks";
 import "./Signin.css";
 
 const Signin = () => {
-  const { values, handleChange } = useForm({ email: "", password: "" });
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
   const popupContext = usePopup();
   const { handleLogin, isLoading } = useStore().UserActions;
 
@@ -23,6 +23,7 @@ const Signin = () => {
       buttonText={isLoading ? "Logging in..." : "Login"}
       redirectText="Sign up"
       isOpen={popupContext.popupStates.signin}
+      isButtonValid={isValid}
       onSubmit={handleSubmit}
     >
       <fieldset className="form__fieldset">
@@ -33,12 +34,13 @@ const Signin = () => {
             name="email"
             className="form__input"
             placeholder="Enter email"
-            value={values.email}
+            value={values.email || ""}
             onChange={handleChange}
-            id="email-input"
             required
           />
-          <span id="email-input-error"></span>
+          <p className="form__input_error">
+            {errors.email && "Invalid email address entered"}
+          </p>
         </label>
         <label className="form__label">
           Password:
@@ -47,12 +49,13 @@ const Signin = () => {
             name="password"
             className="form__input"
             placeholder="Enter password"
-            value={values.password}
+            value={values.password || ""}
             onChange={handleChange}
-            id="password-input"
             required
           />
-          <span id="password-input-error"></span>
+          <p className="form__input_error">
+            {errors.password && "Invalid password entered"}
+          </p>
         </label>
       </fieldset>
     </PopupWithForm>
