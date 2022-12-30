@@ -5,6 +5,7 @@ export const useNews = () => {
   const [news, setNews] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
+  const [keyword, setKeyword] = useState("");
 
   const _setIsSearching = () => {
     setIsSearching(true);
@@ -20,6 +21,7 @@ export const useNews = () => {
         console.log(res);
         if (res.articles.length > 0) {
           setNews(res.articles);
+          setKeyword(keyword);
         } else setIsNotFound(true);
       })
       .catch((err) => {
@@ -29,5 +31,5 @@ export const useNews = () => {
       .finally(() => setIsSearching(false));
   };
 
-  return { news, searchNews, isSearching, isNotFound };
+  return { news, searchNews, isSearching, isNotFound, keyword };
 };
