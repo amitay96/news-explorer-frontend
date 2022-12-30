@@ -26,6 +26,7 @@ const SearchForm = () => {
           placeholder="Enter topic"
           value={values.keyword || ""}
           onChange={handleChange}
+          required
         />
         <button className="searchForm__search_button">Search</button>
       </div>
