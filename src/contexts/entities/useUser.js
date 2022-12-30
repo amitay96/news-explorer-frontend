@@ -7,9 +7,10 @@ export const useUser = () => {
   const [currentUser, setCurrentUser] = useState({ username: "" });
   const [loggedIn, setLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [savedArticles, setSavedArticles] = useState([]);
+  const [token, setToken] = useState(localStorage.getItem("jwt"));
 
   useEffect(() => {
-    const token = localStorage.getItem("jwt");
     if (token) {
       setIsLoading(true);
       UserApi.checkToken(token)
@@ -63,13 +64,57 @@ export const useUser = () => {
     history("/");
   };
 
+  const handleSaveArticle = (article) => {
+    UserApi.saveArticle(article, token)
+      .then((res) => {
+        if (res) {
+          console.log(res);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleGetSaved = () => {
+    UserApi.getSavedArticles(token)
+      .then((res) => {
+        if (!res.message) {
+          console.log(res);
+          setSavedArticles(res);
+        } else setSavedArticles([]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleDeleteSaved = (id) => {
+    UserApi.deleteArticle(id, token)
+      .then((res) => {
+        if (!res.message) {
+          const newSavedArticles = savedArticles.filter(
+            (card) => card._id !== res._id
+          );
+          console.log(res);
+          setSavedArticles(newSavedArticles);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return {
     currentUser,
-    setCurrentUser,
+    savedArticles,
+    isLoading,
     loggedIn,
     handleRegister,
     handleLogin,
     handleLogout,
-    isLoading,
+    handleSaveArticle,
+    handleGetSaved,
+    handleDeleteSaved,
   };
 };
