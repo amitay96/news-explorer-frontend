@@ -10,22 +10,24 @@ export const useUser = () => {
   const [savedArticles, setSavedArticles] = useState([]);
   const [token, setToken] = useState(localStorage.getItem("jwt"));
 
-  useEffect(() => {
-    if (token) {
-      setIsLoading(true);
-      UserApi.checkToken(token)
-        .then((user) => {
-          if (user._id) {
-            setLoggedIn(true);
-            setCurrentUser({ username: user.name });
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => setIsLoading(false));
-    }
-  }, [history]);
+  // useEffect(() => {
+  //   if (token) {
+  //     console.log(token);
+  //     setIsLoading(true);
+  //     UserApi.checkToken(token)
+  //       .then((user) => {
+  //         console.log(user);
+  //         if (user._id) {
+  //           setLoggedIn(true);
+  //           setCurrentUser({ username: user.name });
+  //         }
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       })
+  //       .finally(() => setIsLoading(false));
+  //   }
+  // }, [history]);
 
   const handleLogin = (data) => {
     setIsLoading(true);
@@ -33,7 +35,8 @@ export const useUser = () => {
       .then((res) => {
         if (res) {
           localStorage.setItem("jwt", res.token);
-          setCurrentUser({ username: res.user.name });
+          console.log(res);
+          setCurrentUser({ username: res.data.name });
           setLoggedIn(true);
         }
       })
