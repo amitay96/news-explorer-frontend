@@ -7,17 +7,9 @@ const SearchForm = () => {
   const { values, handleChange } = useForm({ keyword: "" });
   const { searchNews } = useStore().NewsActions;
 
-  // const handleInput = (evt) => {
-  //   evt.preventDefault();
-  //   handleChange(evt);
-  //   handleSubmit(evt);
-  // };
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
     searchNews(values.keyword);
-    // setTimeout(() => {
-    // }, 300);
   };
 
   return (

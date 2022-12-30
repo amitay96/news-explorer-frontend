@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import LocationContext from "./contexts/LocationContext";
 import PopupContext from "./contexts/PopupContext";
-import UserContext from "./contexts/UserContext";
 import GlobalContext from "./contexts/GlobalContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

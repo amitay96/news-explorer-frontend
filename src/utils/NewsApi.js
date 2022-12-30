@@ -6,7 +6,6 @@ class NewsApi {
   }
 
   _checkResponse(res) {
-    console.log(res);
     return res.ok ? res.json() : Promise.reject(res.statusText);
   }
 
@@ -20,7 +19,6 @@ class NewsApi {
 
   getNews(keyword) {
     const lastWeek = this._getLastWeek();
-    console.log(lastWeek);
     return fetch(
       `${this._baseUrl}${keyword}&from=${lastWeek}&to=${this._time}&apiKey=${this._apiKey}`
     ).then((res) => this._checkResponse(res));
