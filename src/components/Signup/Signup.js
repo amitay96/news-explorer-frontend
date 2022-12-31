@@ -17,13 +17,30 @@ const Signup = () => {
   const { handleRegister, isLoading } = useStore().UserActions;
   const [formError, setFormError] = useState({ isError: false, message: "" });
 
-  const handleSubmit = (evt) => {
-    const { email, password, username } = values;
+  // const handleSubmit = (evt) => {
+  //   const { email, password, username } = values;
+  //   handleRegister({ email, password, name: username });
+  //   // evt.preventDefault();
+  //   popupContext.closeAllPopups();
+  //   popupContext.openPopup("registered");
+  // };
+
+  async function handleSubmit(evt) {
     evt.preventDefault();
-    handleRegister({ email, password, name: username });
-    popupContext.closeAllPopups();
-    popupContext.openPopup("registered");
-  };
+    const { email, password, username } = values;
+    try {
+      const res = await handleRegister({ email, password, name: username });
+      if (res.user._id) {
+        popupContext.closeAllPopups();
+        popupContext.openPopup("registered");
+        resetForm();
+      }
+      return res.user;
+    } catch (err) {
+      console.log(err);
+      setFormError({ isError: true, message: "User already exist" });
+    }
+  }
 
   return (
     <PopupWithForm
@@ -82,7 +99,7 @@ const Signup = () => {
             {errors.username && "Invalid username entered"}
           </span>
         </label>
-        <p className="form__error_text">
+        <p className="form__error_text form__input_error">
           {formError.isError && formError.message}
         </p>
       </fieldset>
