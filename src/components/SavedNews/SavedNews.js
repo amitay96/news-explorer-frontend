@@ -44,12 +44,11 @@ const SavedNews = () => {
         <section className="savedNews">
           <p className="savedNews__route">Saved articles</p>
           <p className="savedNews__title">
-            {currentUser.username}, you have 0 saved
-            articles
+            {currentUser.username}, you have 0 saved articles
           </p>
         </section>
       )}
-      <NewsCardList news={savedArticles} />
+      {savedArticles.length > 0 && <NewsCardList news={savedArticles} />}
     </>
   );
 };
