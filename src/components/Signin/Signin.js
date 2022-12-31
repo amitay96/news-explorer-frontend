@@ -10,11 +10,18 @@ const Signin = () => {
   const popupContext = usePopup();
   const { handleLogin, isLoading } = useStore().UserActions;
 
-  const handleSubmit = (evt) => {
+  async function handleSubmit(evt) {
     evt.preventDefault();
-    handleLogin(values);
-    popupContext.closeAllPopups();
-  };
+    try {
+      const user = await handleLogin(values);
+      if (user._id) {
+        popupContext.closeAllPopups();
+      }
+      return user;
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <PopupWithForm
