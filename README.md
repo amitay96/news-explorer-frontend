@@ -41,10 +41,10 @@ Backend Repo GH: [https://github.com/amitay96/news-explorer-api](https://github.
 
 ## Setup
 
-To run this project locally:
+Run this project locally:
 
 1. clone backend and frontend repo.
 2. install dependencies in both repos by typing `npm instal` in the terminal.
-4. run backend server with command `npm run dev`.
-5. run frontend server with command `npm run start`.
-6. change the `node_env` in the frontend repo `src/utils/MainApi.js` to `dev`
+3. run backend server with command `npm run dev`.
+4. run frontend server with command `npm run start`.
+5. in the frontend repo go to `src/utils/MainApi.js` and add the `!` to the `node_env` value.
