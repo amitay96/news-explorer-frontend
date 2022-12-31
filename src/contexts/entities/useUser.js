@@ -70,8 +70,6 @@ export const useUser = () => {
     try {
       const res = await UserApi.register(data);
       if (res) {
-        localStorage.setItem("jwt", res.token);
-        console.log(res);
         return res;
       }
     } catch (err) {
