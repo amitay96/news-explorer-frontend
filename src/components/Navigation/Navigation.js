@@ -7,11 +7,17 @@ import menuIconSaved from "../../images/icons/menu_icon_saved.svg";
 import "./Navigation.css";
 
 const Navigation = ({ isMain }) => {
-  const { openPopup } = usePopup();
+  const { openPopup, closeAllPopups } = usePopup();
   const { currentUser, loggedIn, handleLogout } = useStore().UserActions;
 
+  const logout = () => {
+    handleLogout();
+    window.location.reload();
+    closeAllPopups();
+  };
+
   const handleNavButtonClick = () => {
-    loggedIn ? handleLogout() : openPopup("signin");
+    loggedIn ? logout() : openPopup("signin");
   };
 
   const handleMenuClick = () => {
