@@ -10,6 +10,85 @@ export const useUser = () => {
   const [savedArticles, setSavedArticles] = useState([]);
   const [token, setToken] = useState(localStorage.getItem("jwt"));
 
+  const handleSaveArticle = async (article) => {
+    try {
+      const res = await UserApi.saveArticle(article, token);
+      return res;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleGetSaved = async () => {
+    try {
+      const res = await UserApi.getSavedArticles(token);
+      if (!res.message) {
+        setSavedArticles(res);
+      }
+    } catch (err) {
+      console.log(err);
+      setSavedArticles([]);
+    }
+  };
+
+  const handleDeleteSaved = async (id) => {
+    try {
+      const res = await UserApi.deleteArticle(id, token);
+      if (res.message) {
+        const newSavedArticles = savedArticles.filter(
+          (card) => card._id !== id
+        );
+        setSavedArticles(newSavedArticles);
+        return res;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleLogin = async (data) => {
+    setIsLoading(true);
+    try {
+      const res = await UserApi.login(data);
+      if (res.token) {
+        console.log(res);
+        localStorage.setItem("jwt", res.token);
+        setCurrentUser({ username: res.user.name });
+        setToken(res.token);
+        setLoggedIn(true);
+        return res.user;
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleRegister = async (data) => {
+    setIsLoading(true);
+    try {
+      const res = await UserApi.register(data);
+      if (res) {
+        localStorage.setItem("jwt", res.token);
+        console.log(res);
+        return res;
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleLogout = () => {
+    setCurrentUser({ username: "" });
+    setLoggedIn(false);
+    localStorage.removeItem("jwt");
+    setSavedArticles([]);
+    window.location.reload();
+  };
+
   useEffect(() => {
     if (token) {
       setIsLoading(true);
@@ -22,90 +101,11 @@ export const useUser = () => {
         })
         .catch((err) => {
           console.log(err);
+          handleLogout();
         })
         .finally(() => setIsLoading(false));
     }
   }, [history]);
-
-  const handleLogin = (data) => {
-    setIsLoading(true);
-    UserApi.login(data)
-      .then((res) => {
-        if (res) {
-          localStorage.setItem("jwt", res.token);
-          console.log(res);
-          setCurrentUser({ username: res.user.name });
-          setLoggedIn(true);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => setIsLoading(false));
-  };
-
-  const handleRegister = (data) => {
-    setIsLoading(true);
-    UserApi.register(data)
-      .then((res) => {
-        if (res) {
-          console.log(res);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => setIsLoading(false));
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("jwt");
-    setCurrentUser({ username: "" });
-    setLoggedIn(false);
-    history("/");
-  };
-
-  const handleSaveArticle = (article) => {
-    UserApi.saveArticle(article, token)
-      .then((res) => {
-        if (res) {
-          console.log(res);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const handleGetSaved = () => {
-    UserApi.getSavedArticles(token)
-      .then((res) => {
-        if (!res.message) {
-          console.log(res);
-          setSavedArticles(res);
-        } else setSavedArticles([]);
-      })
-      .catch((err) => {
-        console.log(err);
-        setSavedArticles([])
-      });
-  };
-
-  const handleDeleteSaved = (id) => {
-    UserApi.deleteArticle(id, token)
-      .then((res) => {
-        if (!res.message) {
-          const newSavedArticles = savedArticles.filter(
-            (card) => card._id !== res._id
-          );
-          console.log(res);
-          setSavedArticles(newSavedArticles);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   return {
     currentUser,
