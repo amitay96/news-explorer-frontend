@@ -47,11 +47,12 @@ const NewsCard = ({ title, text, date, image, source, currentCard }) => {
 
   const handleCardButton = (card) => {
     isMain
-      ? loggedIn
-        ? saveCard()
-        : popupContext.openPopup("signin")
+      ? (loggedIn
+        ? (isSaved ? deleteCardFromSaved(card) : saveCard())
+        : popupContext.openPopup("signin"))
       : deleteCardFromSaved(card);
   };
+
   const isSaved = savedArticles.some(
     (card) => card.title === currentCard.title
   );
