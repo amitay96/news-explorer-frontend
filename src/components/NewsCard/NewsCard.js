@@ -25,7 +25,7 @@ const NewsCard = ({ title, text, date, image, source, currentCard }) => {
 
   const shortDate = new Date(date).toLocaleDateString("en-US", dateOptions);
 
-  const saveCard = () => {
+  function saveCard(){
     handleSaveArticle({
       title,
       text,
@@ -36,22 +36,22 @@ const NewsCard = ({ title, text, date, image, source, currentCard }) => {
       link: currentCard.url,
     });
     handleGetSaved();
-  };
+  }
 
-  const deleteCardFromSaved = (currentCard) => {
+  function deleteCardFromSaved(currentCard) {
     const cardToDelete = savedArticles.find(
       (card) => card.title === currentCard.title
     );
     handleDeleteSaved(cardToDelete._id);
-  };
+  }
 
-  const handleCardButton = (card) => {
+  function handleCardButton(card) {
     isMain
       ? (loggedIn
         ? (isSaved ? deleteCardFromSaved(card) : saveCard())
         : popupContext.openPopup("signin"))
       : deleteCardFromSaved(card);
-  };
+  }
 
   const isSaved = savedArticles.some(
     (card) => card.title === currentCard.title
