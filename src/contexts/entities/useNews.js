@@ -13,22 +13,20 @@ export const useNews = () => {
     setNews([]);
   };
 
-  const searchNews = (keyword) => {
+  const searchNews = async (keyword) => {
     _setIsSearching();
-    newsApi
-      .getNews(keyword)
-      .then((res) => {
-        console.log(res);
-        if (res.articles.length > 0) {
-          setNews(res.articles);
-          setKeyword(keyword);
-        } else setIsNotFound(true);
-      })
-      .catch((err) => {
-        console.log("Error:", err);
-        setIsNotFound(true);
-      })
-      .finally(() => setIsSearching(false));
+    try {
+      const res = await newsApi.getNews(keyword);
+      if (res.articles.length > 0) {
+        setNews(res.articles);
+        setKeyword(keyword);
+      } else setIsNotFound(true);
+      return res;
+    } catch (err) {
+      return console.log("error:", err);
+    } finally {
+      setIsSearching(false);
+    }
   };
 
   return { news, searchNews, isSearching, isNotFound, keyword };
