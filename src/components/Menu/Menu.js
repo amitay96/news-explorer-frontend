@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Popup from "../Popup/Popup";
 import { usePopup } from "../../contexts/PopupContext";
+import { useLocations } from "../../contexts/LocationContext";
 import { useStore } from "../../contexts/GlobalContext";
 import logoutIcon from "../../images/icons/logout_icon.svg";
 import "./Menu.css";
@@ -9,7 +10,7 @@ import "./Menu.css";
 const Menu = () => {
   const { popupStates, openPopup, closeAllPopups } = usePopup();
   const { currentUser, loggedIn, handleLogout } = useStore().UserActions;
-
+  const { isMain } = useLocations();
   const { menu } = popupStates;
 
   const handleLoginClick = () => {
@@ -37,7 +38,7 @@ const Menu = () => {
           <li className="menu__list-item">
             <Link
               to="/"
-              className={!menu ? "menu__link" : "menu__link menu__link_active"}
+              className={`menu__link ${isMain && "menu__link_active"}`}
               onClick={closeAllPopups}
             >
               Home
@@ -47,7 +48,7 @@ const Menu = () => {
             <li className="menu__list-item">
               <Link
                 to="/saved-news"
-                className="menu__link"
+                className={`menu__link ${!isMain && "menu__link_active"}`}
                 onClick={closeAllPopups}
               >
                 Saved articles
