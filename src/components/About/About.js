@@ -10,10 +10,16 @@ function About() {
         <div className="about__info-container">
           <h2 className="about__title">About the author</h2>
           <p className="about__text">
-            This block describes the project author. Here you should indicate
-            your name, what you do, and which development technologies you know.
-            You can also talk about your experience with Practicum, what you
-            learned there, and how you can help potential customers.
+            Hello! My name is Amitay Kaganovich and I am a Full Stack Developer
+            with experience starting from middle school in the industry of
+            programing. I am skilled in both front-end and back-end development,
+            with expertise in languages and frameworks such as HTML, CSS,
+            JavaScript, Node.js and React. In addition to my technical skills, I
+            am a highly collaborative and proactive team member who is able to
+            effectively communicate with both technical and non-technical
+            stakeholders. I am excited to bring my skills and experience to new
+            challenges and opportunities, and I am eager to contribute to the
+            success of your team.
           </p>
         </div>
       </div>

@@ -7,16 +7,18 @@ const Popup = ({ isOpen, name, children }) => {
 
   useEffect(() => {
     if (!isOpen) return;
-    const closeByEscape = (e) => {
+    function closeByEscape(e){
       if (e.key === "Escape") {
         popupsContext.closeAllPopups();
       }
-    };
-    const closeByOverlay = (e) => {
+    }
+
+    function closeByOverlay(e){
       if (e.target.classList.contains("popup__active")) {
         popupsContext.closeAllPopups();
       }
     };
+    
     document.addEventListener("keydown", closeByEscape);
     document.addEventListener("mousedown", closeByOverlay);
 

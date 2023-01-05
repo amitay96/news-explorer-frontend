@@ -1,23 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { usePopup } from "../../contexts/PopupContext";
-
+import { useStore } from "../../contexts/GlobalContext";
+import { useFormWithValidation } from "../../utils/hooks";
 import "./Signup.css";
 
-function Signup({ isOpen, onClose, onSubmit }) {
+const Signup = () => {
+  const {
+    values,
+    handleChange,
+    resetForm,
+    errors,
+    isValid,
+  } = useFormWithValidation();
   const popupContext = usePopup();
+  const { handleRegister, isLoading } = useStore().UserActions;
+  const [formError, setFormError] = useState({ isError: false, message: "" });
 
-  const handleSubmit = (evt) => {
+  // const handleSubmit = (evt) => {
+  //   const { email, password, username } = values;
+  //   handleRegister({ email, password, name: username });
+  //   // evt.preventDefault();
+  //   popupContext.closeAllPopups();
+  //   popupContext.openPopup("registered");
+  // };
+
+  async function handleSubmit(evt) {
     evt.preventDefault();
-    popupContext.closeAllPopups();
-    popupContext.openPopup("registered");
-  };
+    const { email, password, username } = values;
+    try {
+      const res = await handleRegister({ email, password, name: username });
+      if (res.user._id) {
+        popupContext.closeAllPopups();
+        popupContext.openPopup("registered");
+        resetForm();
+      }
+      return res.user;
+    } catch (err) {
+      console.log(err);
+      setFormError({ isError: true, message: "User already exist" });
+    }
+  }
 
   return (
     <PopupWithForm
       name="signup"
       title="Sign up"
-      buttonText="Sign up"
+      buttonText={isLoading ? "Signing in..." : "Sign up"}
+      isButtonValid={isValid}
       redirectText="Sign in"
       isOpen={popupContext.popupStates.signup}
       onSubmit={handleSubmit}
@@ -30,12 +60,13 @@ function Signup({ isOpen, onClose, onSubmit }) {
             name="email"
             className="form__input"
             placeholder="Enter email"
-            id="signup-email-input"
+            value={values.email || ""}
+            onChange={handleChange}
+            required
           />
-          <span
-            className="form__input_error"
-            id="signup-email-input-error"
-          ></span>
+          <span className="form__input_error">
+            {errors.email && "Invalid email address entered"}
+          </span>
         </label>
         <label className="form__label">
           Password
@@ -44,13 +75,14 @@ function Signup({ isOpen, onClose, onSubmit }) {
             name="password"
             className="form__input"
             placeholder="Enter password"
-            id="signup-password-input"
+            minLength="8"
+            value={values.password || ""}
+            onChange={handleChange}
             required
           />
-          <span
-            className="form__input_error"
-            id="signup-password-input-error"
-          ></span>
+          <span className="form__input_error">
+            {errors.password && "Invalid password entered"}
+          </span>
         </label>
         <label className="form__label">
           Username
@@ -59,18 +91,20 @@ function Signup({ isOpen, onClose, onSubmit }) {
             name="username"
             className="form__input"
             placeholder="Enter username"
-            id="signup-username-input"
+            value={values.username || ""}
+            onChange={handleChange}
             required
           />
-          <span
-            className="form__input_error"
-            id="signup-username-input-error"
-          ></span>
+          <span className="form__input_error">
+            {errors.username && "Invalid username entered"}
+          </span>
         </label>
-        <p className="form__error_text"></p>
+        <p className="form__error_text form__input_error">
+          {formError.isError && formError.message}
+        </p>
       </fieldset>
     </PopupWithForm>
   );
-}
+};
 
 export default Signup;

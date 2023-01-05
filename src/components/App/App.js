@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
@@ -13,7 +14,14 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/saved-news" element={<SavedNews />} />
+        <Route
+          path="/saved-news"
+          element={
+            <ProtectedRoute>
+              <SavedNews />
+            </ProtectedRoute>
+          }
+        />
         <Route exact={true} path="/" element={<Main />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

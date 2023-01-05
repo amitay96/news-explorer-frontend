@@ -2,3 +2,21 @@
     background: url('../../images/search_background.png') top no-repeat;
     background-size: auto;
 }
+
+@media screen and (max-width: 900px) {
+    .Main {
+        background-size: auto 400px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .Main {
+        background-size: auto 430px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Main {
+        background-size: auto 536px;
+    }
+}

@@ -1,13 +1,13 @@
 import React from "react";
 import Popup from "../Popup/Popup";
 import { usePopup } from "../../contexts/PopupContext";
-
 import "./PopupWithForm.css";
 
 function PopupWithForm({
   name,
   title,
   buttonText,
+  isButtonValid,
   redirectText,
   isOpen,
   onSubmit,
@@ -28,9 +28,11 @@ function PopupWithForm({
         {children}
         <fieldset className="form__fieldset">
           <button
-            className="form__button"
+            className={`form__button ${!isButtonValid &&
+              "form__button_disabled"}`}
             aria-label="submit button"
             type="submit"
+            disabled={!isButtonValid}
           >
             {buttonText}
           </button>

@@ -71,11 +71,6 @@
 }
 
 @media screen and (max-width: 650px) {
-      .popup__container {
-        width: 100%;
-        padding: 16px 17px 100%;
-    }
-
     .popup__container_type_menu {
         padding: 0;
     }
@@ -85,5 +80,16 @@
         padding: 12px;
         top: -34px;
         right: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popup__container {
+        width: 100%;
+        padding: 16px 17px 80%;
+    }
+
+    .popup__container_type_menu {
+        padding: 0;
     }
 }
