@@ -12,6 +12,8 @@
 .about__pic {
   max-width: 100%;
   height: auto;
+  border: none;
+  border-radius: 50%;
 }
 
 .about__info_title {
