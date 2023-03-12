@@ -36,7 +36,7 @@ Fully functional Fullstack app (Vercel):[https://news-explorer-frontend-omega.ve
 
 ## View Repositories
 
-Frontend Repo GH: [https://github.com/amitay96/news-explorer-frontend](https://github.com/amitay96/news-explorer-frontend)
+Frontend Repo GH: [https://github.com/amitay96/news-explorer-frontend](https://github.com/amitay96/news-explorer-frontend) <br>
 Backend Repo GH: [https://github.com/amitay96/news-explorer-api](https://github.com/amitay96/news-explorer-api)
 
 ## Setup
