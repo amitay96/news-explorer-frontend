@@ -91,7 +91,7 @@ let node_env = "production";
 
 let base_url =
   node_env === "production"
-    ? "https://api.amitaynews.students.nomoredomainssbs.ru"
+    ? "https://news-explorer-backend.onrender.com"
     : "http://localhost:3000";
 
 const UserApi = new Api({
