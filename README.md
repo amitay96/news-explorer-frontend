@@ -31,12 +31,12 @@ Project implemented mainly in React with a use of Context API.
 - Open links in new tab
 
 ## Live Demo
-
-Fully functional Fullstack app (GCP):[https://amitaynews.students.nomoredomainssbs.ru/](https://amitaynews.students.nomoredomainssbs.ru/)
+Previously deployed by Google Cloud later on updated for Vercel deploy. <br>
+Fully functional Fullstack app (Vercel):[https://news-explorer-frontend-omega.vercel.app/](https://news-explorer-frontend-omega.vercel.app/)
 
 ## View Repositories
 
-Frontend Repo GH: [https://github.com/amitay96/news-explorer-frontend](https://github.com/amitay96/news-explorer-frontend)
+Frontend Repo GH: [https://github.com/amitay96/news-explorer-frontend](https://github.com/amitay96/news-explorer-frontend) <br>
 Backend Repo GH: [https://github.com/amitay96/news-explorer-api](https://github.com/amitay96/news-explorer-api)
 
 ## Setup
